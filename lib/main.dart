@@ -29,8 +29,17 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(widget.title),),
-      body: Center(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        title: Text(widget.title),),
+      body: Container(
+        child: Stack(children: [
+          
+        ],),
+        color: Colors.transparent,
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
         onPressed: (){},
         tooltip: 'Increment',
