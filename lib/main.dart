@@ -1,3 +1,4 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -25,6 +26,8 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
+final _cam_controller = CameraController(description, resolutionPreset)
+
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
@@ -34,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),),
       body: Container(
         child: Stack(children: [
-          
+          CameraPreview(_cam_controller),
         ],),
         color: Colors.transparent,
         width: MediaQuery.of(context).size.width,
