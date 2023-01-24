@@ -123,7 +123,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 // dropdown widget
               ],
             ),
-          )
+          ),
+          // alert dialog
+          Container()
         ],),
         color: Colors.transparent,
         width: MediaQuery.of(context).size.width,
