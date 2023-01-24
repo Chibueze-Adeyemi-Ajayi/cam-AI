@@ -77,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       drawer: Container(
         padding: EdgeInsets.fromLTRB(0, 50, 0, 0),
-        width: 325, color: Colors.white,
+        width: 325, color: Color.fromARGB(100, 8, 8, 8),
         child: Column(children: [
           Padding(padding: EdgeInsets.all(8), child: Icon(CupertinoIcons.camera_circle_fill, size: 120,color: Color.fromARGB(255, 150, 6, 6),),),
           Text("AI Camera", style:  TextStyle(fontWeight: FontWeight.bold, fontSize: 35),),
