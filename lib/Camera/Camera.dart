@@ -22,8 +22,9 @@ class Camera {
   // initializing the camera controller
   static Future <void> initCamera (CameraController camController, Function callback) async {
     try {
-     await camController.initialize();
+     var cam_val = await camController.initialize();
      callback(false, "Camera successfully initialized");
+     return cam_val;
     } catch (exception) { callback(false, exception); }
   }
 

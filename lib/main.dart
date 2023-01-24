@@ -13,6 +13,7 @@ void main() {
 }
 
 late CameraController camController;
+late Future<void> cameraValue;
 
 void initCamera () async {
   camController = await Camera.getCameraController(0);
@@ -50,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void initCam () async {
     camController = await Camera.getCameraController(0);
-    await Camera.initCamera(camController, (bool status, value){
+    cameraValue = Camera.initCamera(camController, (bool status, value){
     print(value);
   });
   }
@@ -80,7 +81,12 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Container(
         child: Stack(children: [
-          CameraPreview(camController)
+          FutureBuilder(builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.done) {
+                return Text("data");
+              }
+              return Center(child: CircularProgressIndicator(),);
+          })
         ],),
         color: Colors.transparent,
         width: MediaQuery.of(context).size.width,
