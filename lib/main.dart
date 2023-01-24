@@ -81,7 +81,9 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Container(
         child: Stack(children: [
-          FutureBuilder(builder: (context, snapshot) {
+          FutureBuilder(
+            future: cameraValue,
+            builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.done) {
                 return Text("data");
               }
