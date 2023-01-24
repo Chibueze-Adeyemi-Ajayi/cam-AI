@@ -140,8 +140,8 @@ class _MyHomePageState extends State<MyHomePage> {
             XFile file = await camController.takePicture();
             InputImage image = ImageProcessor.getInputImage(file);
 
-            String text = await TextRecognition.captureText(image);
-            print(text);
+            // String text = await TextRecognition.captureText(image);
+            // print(text);
 
           } catch (e) {
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Unexpected Error")));
