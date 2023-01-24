@@ -78,9 +78,9 @@ class _MyHomePageState extends State<MyHomePage> {
   // alert dialog
   Widget dialog () {
     return Center(child: Container(
-           height: 300,
+           height: 300, width: MediaQuery.of(context).size.width,
            child: Column(children: [
-             Container(child: Text("RECOGNIZED TEXT"),)
+             Container(child: Text("\nRECOGNIZED TEXT\n", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),), height: 50,)
            ],),
             margin: EdgeInsets.all(10),
             decoration: BoxDecoration(
