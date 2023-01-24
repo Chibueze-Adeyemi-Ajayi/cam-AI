@@ -1,4 +1,5 @@
 import 'package:cam_ai/Utils/ImageProcessor.dart';
+import 'package:cam_ai/Utils/TextRecognition.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -139,7 +140,8 @@ class _MyHomePageState extends State<MyHomePage> {
             XFile file = await camController.takePicture();
             InputImage image = ImageProcessor.getInputImage(file);
 
-            print(file.path);
+            String text = await TextRecognition.captureText(image);
+            print(text);
 
           } catch (e) {
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Unexpected Error")));
