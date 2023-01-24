@@ -103,16 +103,22 @@ class _MyHomePageState extends State<MyHomePage> {
               return Center(child: CircularProgressIndicator(),);
           }),
           Container(
-            margin: EdgeInsets.fromLTRB(0, 55, 0, 0),
+            margin: EdgeInsets.fromLTRB(0, 65, 0, 0),
             child: Row(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 // activity widget
                 Container(
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(20),
                     border: Border.all(color: Colors.white)),
                   padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
-                  child: Text("Text Recognition", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 15)),
+                  child: Row(children: [
+                    Container(width: 10, height: 10, decoration: BoxDecoration(
+                      color: Colors.redAccent, borderRadius: BorderRadius.circular(10)
+                    ),),
+                    Container(width: 25,),
+                    Text("Text Recognition", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 15))
+                  ]),
                 )
                 // dropdown widget
               ],
