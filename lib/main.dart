@@ -116,7 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     Container(width: 10, height: 10, decoration: BoxDecoration(
                       color: Colors.redAccent, borderRadius: BorderRadius.circular(10)
                     ),),
-                    Container(width: 25,),
+                    Container(width: 10, height: 10,),
                     Text("Text Recognition", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 15))
                   ]),
                 )
