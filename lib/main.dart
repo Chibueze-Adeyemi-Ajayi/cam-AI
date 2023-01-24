@@ -132,7 +132,14 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Color.fromARGB(255, 150, 6, 6),
         onPressed: () async {
-           XFile file = await camController.takePicture();
+          try {
+
+            XFile file = await camController.takePicture();
+
+          } catch (e) {
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Unexpected Error")));
+          }
+           
         },
         tooltip: 'Camera',
         child: const Icon(CupertinoIcons.camera_fill),
