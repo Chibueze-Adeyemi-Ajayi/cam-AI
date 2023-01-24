@@ -131,8 +131,8 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
         backgroundColor: Color.fromARGB(255, 150, 6, 6),
-        onPressed: (){
-       
+        onPressed: () async {
+           XFile file = await camController.takePicture();
         },
         tooltip: 'Camera',
         child: const Icon(CupertinoIcons.camera_fill),
