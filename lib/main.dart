@@ -80,7 +80,9 @@ class _MyHomePageState extends State<MyHomePage> {
     return Center(child: Container(
            height: 300, width: MediaQuery.of(context).size.width,
            child: Column(children: [
-             Container(child: Text("\nRECOGNIZED TEXT\n", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),), height: 50,)
+             Container(
+              decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.white))),
+              child: Text("\nRECOGNIZED TEXT\n", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),), height: 50,)
            ],),
             margin: EdgeInsets.all(10),
             decoration: BoxDecoration(
