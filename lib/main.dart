@@ -13,8 +13,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(primarySwatch: Colors.blue,),
+      theme: ThemeData(primarySwatch: Colors.red,),
       home: const MyHomePage(title: 'Came AI'),
     );
   }
@@ -41,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
         onPressed: (){},
-        tooltip: 'Increment',
+        tooltip: 'Camera',
         child: const Icon(CupertinoIcons.camera_circle_fill),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
