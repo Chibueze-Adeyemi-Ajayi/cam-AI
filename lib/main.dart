@@ -4,19 +4,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    systemNavigationBarColor: Color.fromARGB(255, 223, 222, 222), // transparent status bar
-  ));
-  runApp(const MyApp()); initCamera();
-}
-
 late CameraController camController;
 late Future<void> cameraValue;
+late List <CameraDescription> cameras;
 
-void initCamera () async {
-  camController = await Camera.getCameraController(0);
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    systemNavigationBarColor: Colors.transparent, // transparent status bar
+  ));
+  cameras = await availableCameras();
+  runApp(const MyApp()); 
 }
 
 class MyApp extends StatelessWidget {
@@ -50,10 +48,21 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void initCam () async {
-    camController = await Camera.getCameraController(0);
-    cameraValue = Camera.initCamera(camController, (bool status, value){
-    print(value);
-  });
+    camController = CameraController(cameras[0], ResolutionPreset.max);
+    cameraValue = camController.initialize().then((_) => {
+        if (!mounted) {
+          showDialog(context: context, builder: (context) {
+            return AlertDialog(
+              title: Text("Camera Error"),
+              content: Text("Unable to initialize the camera"),
+              actions: [TextButton(onPressed: () {
+                Navigator.pop(context);
+                return null;
+              }, child: Text("Text"))],
+            );
+          })
+        } else setState(() { })
+    }).catchError((Object e) {print(e.toString());});
   }
 
   @override
