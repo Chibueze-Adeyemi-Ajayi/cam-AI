@@ -1,4 +1,5 @@
 import 'package:camera/camera.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -30,9 +31,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        title: Text(widget.title),),
       body: Container(
         child: Stack(children: [
           
@@ -44,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: (){},
         tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        child: const Icon(CupertinoIcons.camera_circle_fill),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
