@@ -26,6 +26,7 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
+final List <CameraDescription> 
 final _cam_controller = CameraController(description, resolutionPreset)
 
 class _MyHomePageState extends State<MyHomePage> {
