@@ -79,10 +79,12 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget dialog () {
     return Center(child: Container(
            height: 300, width: MediaQuery.of(context).size.width,
-           child: Column(children: [
-             Container(
+           child: Column(
+            children: [
+             Container(width: MediaQuery.of(context).size.width,
+             padding: EdgeInsets.all(5),
               decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.white))),
-              child: Text("\nRECOGNIZED TEXT\n", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),), height: 50,)
+              child: Text("RECOGNIZED TEXT", textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),), height: 50,)
            ],),
             margin: EdgeInsets.all(10),
             decoration: BoxDecoration(
