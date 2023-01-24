@@ -101,7 +101,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 ) ;
               }
               return Center(child: CircularProgressIndicator(),);
-          })
+          }),
+          Container(
+            margin: EdgeInsets.fromLTRB(0, 25, 0, 0),
+            child: Row(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                // activity widget
+                // dropdown widget
+              ],
+            ),
+          )
         ],),
         color: Colors.transparent,
         width: MediaQuery.of(context).size.width,
