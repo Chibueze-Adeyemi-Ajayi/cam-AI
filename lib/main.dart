@@ -12,9 +12,6 @@ late List <CameraDescription> cameras;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    systemNavigationBarColor: Colors.transparent, // transparent status bar
-  ));
   cameras = await availableCameras();
   runApp(const MyApp()); 
 }
@@ -141,7 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
             InputImage image = ImageProcessor.getInputImage(file);
 
             String text = await TextRecognition.captureText(image);
-            print(text);
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(text)));
 
           } catch (e) {
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Unexpected Error")));
