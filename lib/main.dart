@@ -75,8 +75,8 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Container(color: Color.fromARGB(100, 8, 8, 8),
-        decoration: BoxDecoration(
+      drawer: Container(
+        decoration: BoxDecoration(color: Color.fromARGB(100, 8, 8, 8),
             border: Border(right: BorderSide(color: Color.fromARGB(255, 255, 255, 255)))
         ),
         padding: EdgeInsets.fromLTRB(0, 50, 0, 0),
