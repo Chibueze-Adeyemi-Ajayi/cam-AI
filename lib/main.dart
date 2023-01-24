@@ -75,6 +75,20 @@ class _MyHomePageState extends State<MyHomePage> {
     camController.takePicture();
   }
 
+  // alert dialog
+  Widget dialog () {
+    return Center(child: Container(
+           height: 300,
+           child: Column(children: [
+             Container(child: Text("RECOGNIZED TEXT"),)
+           ],),
+            margin: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.white)
+            ),
+          ));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -125,7 +139,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           // alert dialog
-          Container()
+          dialog()
         ],),
         color: Colors.transparent,
         width: MediaQuery.of(context).size.width,
