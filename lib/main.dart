@@ -94,7 +94,11 @@ class _MyHomePageState extends State<MyHomePage> {
             future: cameraValue,
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.done) {
-                return Text("data");
+                return Container(
+                  child: CameraPreview(camController),
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                ) ;
               }
               return Center(child: CircularProgressIndicator(),);
           })
