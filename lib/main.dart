@@ -1,7 +1,9 @@
+import 'package:cam_ai/Utils/ImageProcessor.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_mlkit_commons/google_mlkit_commons.dart';
 
 late CameraController camController;
 late Future<void> cameraValue;
@@ -135,6 +137,9 @@ class _MyHomePageState extends State<MyHomePage> {
           try {
 
             XFile file = await camController.takePicture();
+            InputImage image = ImageProcessor.getInputImage(file);
+
+            print(file.path);
 
           } catch (e) {
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Unexpected Error")));
