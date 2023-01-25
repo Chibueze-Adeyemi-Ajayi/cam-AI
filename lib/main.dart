@@ -76,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   String _data = "";
-  bool _showDialog = false;
+  bool _showDialog = false, _loading = false;
 
   // alert dialog
   Widget dialog () {
@@ -156,7 +156,14 @@ class _MyHomePageState extends State<MyHomePage> {
                       color: Colors.redAccent, borderRadius: BorderRadius.circular(10)
                     ),),
                     Container(width: 10, height: 10,),
-                    Text("Text Recognition", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 15))
+                    Text("Text Recognition", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 15)),
+                    Container(width: 10, height: 10,),
+                    GestureDetector(
+                      child : Icon(Icons.more_vert, color: Colors.white, size: 15,),
+                      onTap: () {
+
+                      },
+                    )
                   ]),
                 )
                 // dropdown widget
@@ -164,7 +171,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           // alert dialog
-          _showDialog ? dialog() : Container()
+          _showDialog ? dialog() : Container(),
+          _loading ? Center(child: CircularProgressIndicator(),) : Container()
         ],),
         color: Colors.transparent,
         width: MediaQuery.of(context).size.width,
@@ -175,7 +183,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () async {
           try {
 
-            setState(() { _showDialog = false; });
+            setState(() { _showDialog = false; _loading = true; });
 
             XFile file = await camController.takePicture();
             InputImage image = ImageProcessor.getInputImage(file);
@@ -183,7 +191,7 @@ class _MyHomePageState extends State<MyHomePage> {
             String text = await TextRecognition.captureText(image);
             
             setState(() {
-              _data = text; _showDialog = true;
+              _data = text; _showDialog = true; _loading = false;
             });
 
           } catch (e) {
