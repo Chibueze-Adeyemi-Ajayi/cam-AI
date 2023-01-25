@@ -97,10 +97,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     setState(() { _showDialog = false; });
                 }, child: Icon(Icons.cancel, color: Colors.white, size: 20,),)
               ],), height: 32,),
-              SingleChildScrollView(child: Column(
+              Container( 
+                width: MediaQuery.of(context).size.width, height: MediaQuery.of(context).size.height - 260,
+                child: SingleChildScrollView(child: Column(
                 children: [
-                  Container(padding: EdgeInsets.all(8), child:  Text(_data, style: TextStyle(color: Colors.white),),)
-              ],))
+                  Container(
+                    padding: EdgeInsets.all(8), child:  Text(_data, style: TextStyle(color: Colors.white),),)
+              ],)),
+              )
            ],),
             margin: EdgeInsets.all(10),
             decoration: BoxDecoration(
