@@ -75,23 +75,33 @@ class _MyHomePageState extends State<MyHomePage> {
     camController.takePicture();
   }
 
+  String _data = "";
+  bool _showDialog = false;
+
   // alert dialog
   Widget dialog () {
     return Center(child: Container(
-           height: 300, width: MediaQuery.of(context).size.width,
+           height: 370, width: MediaQuery.of(context).size.width,
            child: Column(
             children: [
              Container(width: MediaQuery.of(context).size.width,
              padding: EdgeInsets.all(5),
               decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.white))),
               child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                Text("RECOGNIZED TEXT", textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),)
-              ],), height: 26,),
-              SingleChildScrollView()
+                Text("RECOGNIZED TEXT", textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),),
+                Container(width: 20,),
+                GestureDetector(onTap: () {
+
+                }, child: Icon(Icons.cancel, color: Colors.white,),)
+              ],), height: 32,),
+              SingleChildScrollView(child: Text(_data),)
            ],),
             margin: EdgeInsets.all(10),
             decoration: BoxDecoration(
+              color: Color.fromARGB(125, 0, 0, 0),
               border: Border.all(color: Colors.white)
             ),
           ));
@@ -147,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           // alert dialog
-          dialog()
+          _showDialog ? dialog() : Container()
         ],),
         color: Colors.transparent,
         width: MediaQuery.of(context).size.width,
