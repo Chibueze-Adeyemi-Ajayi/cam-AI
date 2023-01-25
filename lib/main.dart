@@ -84,7 +84,11 @@ class _MyHomePageState extends State<MyHomePage> {
              Container(width: MediaQuery.of(context).size.width,
              padding: EdgeInsets.all(5),
               decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.white))),
-              child: Text("RECOGNIZED TEXT", textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),), height: 50,)
+              child: Row(
+                children: [
+                Text("RECOGNIZED TEXT", textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),)
+              ],), height: 26,),
+              SingleChildScrollView()
            ],),
             margin: EdgeInsets.all(10),
             decoration: BoxDecoration(
