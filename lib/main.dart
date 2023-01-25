@@ -91,11 +91,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                Text("RECOGNIZED TEXT", textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),),
+                Text("RECOGNIZED TEXT", textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontSize: 15,),),
                 Container(width: 20,),
                 GestureDetector(onTap: () {
                     setState(() { _showDialog = false; });
-                }, child: Icon(Icons.cancel, color: Colors.white,),)
+                }, child: Icon(Icons.cancel, color: Colors.white, size: 20,),)
               ],), height: 32,),
               SingleChildScrollView(child: Column(
                 children: [
