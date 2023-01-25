@@ -94,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Text("RECOGNIZED TEXT", textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),),
                 Container(width: 20,),
                 GestureDetector(onTap: () {
-
+                    setState(() { _showDialog = false; });
                 }, child: Icon(Icons.cancel, color: Colors.white,),)
               ],), height: 32,),
               SingleChildScrollView(child: Text(_data),)
@@ -168,11 +168,16 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () async {
           try {
 
+            setState(() { _showDialog = false; });
+
             XFile file = await camController.takePicture();
             InputImage image = ImageProcessor.getInputImage(file);
 
             String text = await TextRecognition.captureText(image);
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(text)));
+            
+            setState(() {
+              _data = text; _showDialog = true;
+            });
 
           } catch (e) {
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Unexpected Error")));
