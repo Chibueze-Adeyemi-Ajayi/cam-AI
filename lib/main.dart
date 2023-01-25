@@ -97,7 +97,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     setState(() { _showDialog = false; });
                 }, child: Icon(Icons.cancel, color: Colors.white,),)
               ],), height: 32,),
-              SingleChildScrollView(child: Text(_data),)
+              SingleChildScrollView(child: Column(
+                children: [
+                  Container(padding: EdgeInsets.all(8), child:  Text(_data, style: TextStyle(color: Colors.white),),)
+              ],))
            ],),
             margin: EdgeInsets.all(10),
             decoration: BoxDecoration(
@@ -143,7 +146,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     border: Border.all(color: Colors.white)),
-                  padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
+                  padding: EdgeInsets.fromLTRB(15, 5, 15, 5),
                   child: Row(children: [
                     Container(width: 10, height: 10, decoration: BoxDecoration(
                       color: Colors.redAccent, borderRadius: BorderRadius.circular(10)
