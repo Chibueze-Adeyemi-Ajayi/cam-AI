@@ -10,4 +10,14 @@ class BarcodeRecognition {
     return new BarcodeRecognition();
   }
 
+  Future <void> processCode (InputImage image, Function callback) async {
+
+    try {
+
+      
+
+    } catch (e) { callback(false, e.toString());}
+
+  }
+
 }
