@@ -14,7 +14,24 @@ class BarcodeRecognition {
 
     try {
 
-      
+      final List<Barcode> barcodes = await barcodeScanner.processImage(image);
+
+        for (Barcode barcode in barcodes) {
+              final BarcodeType type = barcode.type;
+              //final Rect boundingBox = barcode.boundingBox;
+              final String? displayValue = barcode.displayValue;
+              final String? rawValue = barcode.rawValue;
+
+              // See API reference for complete list of supported types
+              switch (type) {
+                case BarcodeType.wifi:
+                  var barcodeWifi = barcode.value;
+                  break;
+                case BarcodeType.url:
+                  var barcodeUrl = barcode.value;
+                  break;
+              }
+        }
 
     } catch (e) { callback(false, e.toString());}
 
