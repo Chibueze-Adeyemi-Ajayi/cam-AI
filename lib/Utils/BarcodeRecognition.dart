@@ -26,10 +26,13 @@ class BarcodeRecognition {
               switch (type) {
                 case BarcodeType.wifi:
                   var barcodeWifi = barcode.value;
+                  callback(true, barcodeWifi);
                   break;
                 case BarcodeType.url:
                   var barcodeUrl = barcode.value;
+                  callback(true, barcodeUrl);
                   break;
+                default: callback(false, "Unknown bar code");
               }
         }
 
