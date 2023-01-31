@@ -129,7 +129,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget _barCodeRegion () {
     return Center(
       child: Container(
-        margin: EdgeInsets.all(8),
+        height: 300,
+        margin: EdgeInsets.all(20),
         decoration: BoxDecoration(
           border: Border.all(color: Colors.white, width: 3, style: BorderStyle.solid)
         )
