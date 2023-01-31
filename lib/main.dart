@@ -97,7 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
         }, child: list(Text("Text Recognition", textAlign: TextAlign.start, style: TextStyle(color: Colors.white,),)),),
         GestureDetector(onTap: () {
           setState(() {
-              action = 0;  _code = true;
+              action = 1;  _code = true;
               mode = "Barcode Scanning";
               _options = false;
             });
