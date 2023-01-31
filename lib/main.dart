@@ -243,7 +243,7 @@ class _MyHomePageState extends State<MyHomePage> {
           _showDialog ? dialog() : Container(),
           _loading ? Center(child: CircularProgressIndicator(),) : Container(),
           _options ? _options_() : Container(),
-          action == 2 ? _barCodeRegion() : Container()
+          action == 1 ? _barCodeRegion() : Container()
         ],),
         //color: Colors.transparent,
         width: MediaQuery.of(context).size.width,
