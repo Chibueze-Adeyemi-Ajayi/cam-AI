@@ -88,7 +88,10 @@ class _MyHomePageState extends State<MyHomePage> {
         list(Text("Choose Action", textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontSize: 20),)),
         GestureDetector(onTap: () {}, child: list(Text("Text Recognition", textAlign: TextAlign.start, style: TextStyle(color: Colors.white,),)),),
         GestureDetector(onTap: () {}, child: list(Text("Barcode Scanning", textAlign: TextAlign.start, style: TextStyle(color: Colors.white,),)),),
-        GestureDetector(onTap: () {}, child: list(Text("Pose detection", textAlign: TextAlign.start, style: TextStyle(color: Colors.white,),)),)
+        GestureDetector(onTap: () {}, child: list(Text("Pose detection", textAlign: TextAlign.start, style: TextStyle(color: Colors.white,),)),),
+        Container(
+          decoration: BoxDecoration(color: Colors.redAccent),
+          width: 100, height: 40, child: TextButton(child: Text("Close", style: TextStyle(),), onPressed: () {},),),
         
       ],),
       width: MediaQuery.of(context).size.width - 50,
