@@ -145,7 +145,7 @@ class _MyHomePageState extends State<MyHomePage> {
           //     }
           //     return Center(child: CircularProgressIndicator(),);
           // }),
-          Container(
+          Container(color: Colors.black,
             margin: EdgeInsets.fromLTRB(0, 65, 0, 0),
             child: Row(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center,
               children: [
