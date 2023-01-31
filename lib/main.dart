@@ -104,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
         }, child: list(Text("Barcode Scanning", textAlign: TextAlign.start, style: TextStyle(color: Colors.white,),)),),
         GestureDetector(onTap: () {
           setState(() {
-              action = 1;  _code = false;
+              action = 2;  _code = false;
               mode = "Pose detection";
               _options = false;
             });
@@ -258,7 +258,7 @@ class _MyHomePageState extends State<MyHomePage> {
             
             XFile file = await camController.takePicture();
             InputImage image = ImageProcessor.getInputImage(file);
-
+            
             if (action == 0) { // recognizing text
               String text = await TextRecognition.captureText(image);
               setState(() { title = "RECOGNIZED TEXT"; _data = text; _showDialog = true; });

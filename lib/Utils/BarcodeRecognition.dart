@@ -15,7 +15,7 @@ class BarcodeRecognition {
     try {
 
       final List<Barcode> barcodes = await barcodeScanner.processImage(image);
-
+        
         for (Barcode barcode in barcodes) {
               final BarcodeType type = barcode.type;
               //final Rect boundingBox = barcode.boundingBox;
