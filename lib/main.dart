@@ -88,20 +88,22 @@ class _MyHomePageState extends State<MyHomePage> {
         list(Text("Choose Action", textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontSize: 20),)),
         GestureDetector(onTap: () {
           setState(() {
+              action = 0;
+              mode = "Text Recognition";
               _options = false;
             });
         }, child: list(Text("Text Recognition", textAlign: TextAlign.start, style: TextStyle(color: Colors.white,),)),),
         GestureDetector(onTap: () {
           setState(() {
               action = 0;
-              mode = "Text Recognition";
+              mode = "Barcode Scanning";
               _options = false;
             });
         }, child: list(Text("Barcode Scanning", textAlign: TextAlign.start, style: TextStyle(color: Colors.white,),)),),
         GestureDetector(onTap: () {
           setState(() {
               action = 1;
-              mode = "Barcode Scanning";
+              mode = "Pose detection";
               _options = false;
             });
         }, child: list(Text("Pose detection", textAlign: TextAlign.start, style: TextStyle(color: Colors.white,),)),),
@@ -110,8 +112,6 @@ class _MyHomePageState extends State<MyHomePage> {
           decoration: BoxDecoration(color: Colors.redAccent, borderRadius: BorderRadius.circular(8)),
           width: 100, height: 40, child: TextButton(child: Text("Close", style: TextStyle(color: Colors.white),), onPressed: () {
             setState(() {
-              action = 2;
-              mode = "Pose detection";
               _options = false;
             });
           },),),
