@@ -39,8 +39,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-  String mode = "Text Recognition";
-
   @override
   void dispose() {
     // TODO: implement dispose
@@ -73,12 +71,16 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
   }
 
+  Widget _options_ () {
+    return Container();
+  }
+
   void capture () {
     camController.takePicture();
   }
 
-  String _data = "";
-  bool _showDialog = false, _loading = false;
+  String _data = "", mode = "Text Recognition";
+  bool _showDialog = false, _loading = false, _options = true;
 
   // alert dialog
   Widget dialog () {
@@ -174,7 +176,8 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           // alert dialog
           _showDialog ? dialog() : Container(),
-          _loading ? Center(child: CircularProgressIndicator(),) : Container()
+          _loading ? Center(child: CircularProgressIndicator(),) : Container(),
+          _options ? _options_() : Container(),
         ],),
         color: Colors.transparent,
         width: MediaQuery.of(context).size.width,
