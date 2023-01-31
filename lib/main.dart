@@ -93,12 +93,14 @@ class _MyHomePageState extends State<MyHomePage> {
         }, child: list(Text("Text Recognition", textAlign: TextAlign.start, style: TextStyle(color: Colors.white,),)),),
         GestureDetector(onTap: () {
           setState(() {
+              action = 0;
               mode = "Text Recognition";
               _options = false;
             });
         }, child: list(Text("Barcode Scanning", textAlign: TextAlign.start, style: TextStyle(color: Colors.white,),)),),
         GestureDetector(onTap: () {
           setState(() {
+              action = 1;
               mode = "Barcode Scanning";
               _options = false;
             });
@@ -108,6 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
           decoration: BoxDecoration(color: Colors.redAccent, borderRadius: BorderRadius.circular(8)),
           width: 100, height: 40, child: TextButton(child: Text("Close", style: TextStyle(color: Colors.white),), onPressed: () {
             setState(() {
+              action = 2;
               mode = "Pose detection";
               _options = false;
             });
@@ -116,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ],),
       width: MediaQuery.of(context).size.width - 50,
       height: 212, decoration: BoxDecoration(
-        color: Color.fromARGB(100, 0, 0, 0), border: Border.all(color: Colors.white),
+        color: Color.fromARGB(150, 0, 0, 0), border: Border.all(color: Colors.white),
         borderRadius: BorderRadius.circular(8))
     ),);
   }
@@ -127,6 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   String _data = "", mode = "Text Recognition";
   bool _showDialog = false, _loading = false, _options = false;
+  int action = 0;
 
   // alert dialog
   Widget dialog () {
