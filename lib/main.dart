@@ -131,7 +131,7 @@ class _MyHomePageState extends State<MyHomePage> {
           
         ],),
       ),
-      body: Container(
+      body: Container(color: Color.fromARGB(255, 36, 35, 35),
         child: Stack(children: [
           // FutureBuilder(
           //   future: cameraValue,
@@ -145,7 +145,7 @@ class _MyHomePageState extends State<MyHomePage> {
           //     }
           //     return Center(child: CircularProgressIndicator(),);
           // }),
-          Container(color: Colors.black,
+          Container(
             margin: EdgeInsets.fromLTRB(0, 65, 0, 0),
             child: Row(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -179,7 +179,7 @@ class _MyHomePageState extends State<MyHomePage> {
           _loading ? Center(child: CircularProgressIndicator(),) : Container(),
           _options ? _options_() : Container(),
         ],),
-        color: Colors.transparent,
+        //color: Colors.transparent,
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
