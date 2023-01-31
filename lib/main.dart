@@ -73,6 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget list (Widget widget) {
     return Container(
+      width: MediaQuery.of(context).size.width,
       child: widget,
       padding: EdgeInsets.all(8),
       decoration: BoxDecoration(
@@ -84,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget _options_ () {
     return Center(child: Container(
       child : Column(children: [
-        list(Text("Menu"))
+        list(Text("Choose Action", textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontSize: 20),))
       ],),
       width: MediaQuery.of(context).size.width - 50,
       height: 400, decoration: BoxDecoration(
