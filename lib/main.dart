@@ -39,6 +39,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
+  String mode = "Text Recognition";
+
   @override
   void dispose() {
     // TODO: implement dispose
@@ -156,7 +158,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       color: Colors.redAccent, borderRadius: BorderRadius.circular(10)
                     ),),
                     Container(width: 10, height: 10,),
-                    Text("Text Recognition", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 15)),
+                    Text("$mode", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 15)),
                     Container(width: 10, height: 10,),
                     GestureDetector(
                       child : Icon(Icons.more_vert, color: Colors.white, size: 15,),
