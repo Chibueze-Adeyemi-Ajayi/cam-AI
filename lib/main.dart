@@ -133,18 +133,18 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Container(
         child: Stack(children: [
-          FutureBuilder(
-            future: cameraValue,
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.done) {
-                return Container(
-                  child: CameraPreview(camController),
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
-                ) ;
-              }
-              return Center(child: CircularProgressIndicator(),);
-          }),
+          // FutureBuilder(
+          //   future: cameraValue,
+          //   builder: (context, snapshot) {
+          //     if (snapshot.connectionState == ConnectionState.done) {
+          //       return Container(
+          //         child: CameraPreview(camController),
+          //         width: MediaQuery.of(context).size.width,
+          //         height: MediaQuery.of(context).size.height,
+          //       ) ;
+          //     }
+          //     return Center(child: CircularProgressIndicator(),);
+          // }),
           Container(
             margin: EdgeInsets.fromLTRB(0, 65, 0, 0),
             child: Row(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center,
