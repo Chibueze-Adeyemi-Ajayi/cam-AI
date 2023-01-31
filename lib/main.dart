@@ -82,6 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+  // option menu
   Widget _options_ () {
     return Center(child: Container(
       child : Column(children: [
@@ -122,6 +123,18 @@ class _MyHomePageState extends State<MyHomePage> {
         color: Color.fromARGB(150, 0, 0, 0), border: Border.all(color: Colors.white),
         borderRadius: BorderRadius.circular(8))
     ),);
+  }
+
+  // bar code region
+  Widget _barCodeRegion () {
+    return Center(
+      child: Container(
+        margin: EdgeInsets.all(8),
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.white, width: 3, style: BorderStyle.solid)
+        )
+      ),
+    );
   }
 
   void capture () {
@@ -230,6 +243,7 @@ class _MyHomePageState extends State<MyHomePage> {
           _showDialog ? dialog() : Container(),
           _loading ? Center(child: CircularProgressIndicator(),) : Container(),
           _options ? _options_() : Container(),
+          action == 2 ? _barCodeRegion() : Container()
         ],),
         //color: Colors.transparent,
         width: MediaQuery.of(context).size.width,
@@ -240,14 +254,20 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () async {
           try {
 
-            setState(() { _showDialog = false; _loading = true; });
-
+            setState(() { _showDialog = false; _loading = true; _options = false; });
+            
             XFile file = await camController.takePicture();
             InputImage image = ImageProcessor.getInputImage(file);
 
-            String text = await TextRecognition.captureText(image);
+            if (mode == 0) { // recognizing text
+              String text = await TextRecognition.captureText(image);
+              setState(() { _data = text; _showDialog = true; });
+            } else if (mode == 1) { //scanning bar code
+            
+            } else if (mode == 2) { //detecting pose
 
-            setState(() { _data = text; _showDialog = true; });
+            }
+            
             
             setState(() { _loading = false; });
 
