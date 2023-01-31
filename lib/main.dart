@@ -161,7 +161,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     GestureDetector(
                       child : Icon(Icons.more_vert, color: Colors.white, size: 15,),
                       onTap: () {
-
+                        print("Hola");
                       },
                     )
                   ]),
