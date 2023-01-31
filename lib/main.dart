@@ -90,8 +90,9 @@ class _MyHomePageState extends State<MyHomePage> {
         GestureDetector(onTap: () {}, child: list(Text("Barcode Scanning", textAlign: TextAlign.start, style: TextStyle(color: Colors.white,),)),),
         GestureDetector(onTap: () {}, child: list(Text("Pose detection", textAlign: TextAlign.start, style: TextStyle(color: Colors.white,),)),),
         Container(
-          decoration: BoxDecoration(color: Colors.redAccent),
-          width: 100, height: 40, child: TextButton(child: Text("Close", style: TextStyle(),), onPressed: () {},),),
+          margin: EdgeInsets.all(5),
+          decoration: BoxDecoration(color: Colors.redAccent, borderRadius: BorderRadius.circular(8)),
+          width: 100, height: 40, child: TextButton(child: Text("Close", style: TextStyle(color: Colors.white),), onPressed: () {},),),
         
       ],),
       width: MediaQuery.of(context).size.width - 50,
