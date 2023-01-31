@@ -73,6 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget _options_ () {
     return Center(child: Container(
+      child : Column(children: [],),
       width: MediaQuery.of(context).size.width - 50,
       height: 400, decoration: BoxDecoration(
         color: Colors.transparent, border: Border.all(color: Colors.white),
