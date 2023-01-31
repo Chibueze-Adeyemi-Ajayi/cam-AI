@@ -86,14 +86,29 @@ class _MyHomePageState extends State<MyHomePage> {
     return Center(child: Container(
       child : Column(children: [
         list(Text("Choose Action", textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontSize: 20),)),
-        GestureDetector(onTap: () {}, child: list(Text("Text Recognition", textAlign: TextAlign.start, style: TextStyle(color: Colors.white,),)),),
-        GestureDetector(onTap: () {}, child: list(Text("Barcode Scanning", textAlign: TextAlign.start, style: TextStyle(color: Colors.white,),)),),
-        GestureDetector(onTap: () {}, child: list(Text("Pose detection", textAlign: TextAlign.start, style: TextStyle(color: Colors.white,),)),),
+        GestureDetector(onTap: () {
+          setState(() {
+              _options = false;
+            });
+        }, child: list(Text("Text Recognition", textAlign: TextAlign.start, style: TextStyle(color: Colors.white,),)),),
+        GestureDetector(onTap: () {
+          setState(() {
+              mode = "Text Recognition";
+              _options = false;
+            });
+        }, child: list(Text("Barcode Scanning", textAlign: TextAlign.start, style: TextStyle(color: Colors.white,),)),),
+        GestureDetector(onTap: () {
+          setState(() {
+              mode = "Barcode Scanning";
+              _options = false;
+            });
+        }, child: list(Text("Pose detection", textAlign: TextAlign.start, style: TextStyle(color: Colors.white,),)),),
         Container(
           margin: EdgeInsets.all(5),
           decoration: BoxDecoration(color: Colors.redAccent, borderRadius: BorderRadius.circular(8)),
           width: 100, height: 40, child: TextButton(child: Text("Close", style: TextStyle(color: Colors.white),), onPressed: () {
             setState(() {
+              mode = "Pose detection";
               _options = false;
             });
           },),),
@@ -101,7 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ],),
       width: MediaQuery.of(context).size.width - 50,
       height: 212, decoration: BoxDecoration(
-        color: Colors.transparent, border: Border.all(color: Colors.white),
+        color: Color.fromARGB(100, 0, 0, 0), border: Border.all(color: Colors.white),
         borderRadius: BorderRadius.circular(8))
     ),);
   }
@@ -164,18 +179,18 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Container(color: Color.fromARGB(255, 36, 35, 35),
         child: Stack(children: [
-          // FutureBuilder(
-          //   future: cameraValue,
-          //   builder: (context, snapshot) {
-          //     if (snapshot.connectionState == ConnectionState.done) {
-          //       return Container(
-          //         child: CameraPreview(camController),
-          //         width: MediaQuery.of(context).size.width,
-          //         height: MediaQuery.of(context).size.height,
-          //       ) ;
-          //     }
-          //     return Center(child: CircularProgressIndicator(),);
-          // }),
+          FutureBuilder(
+            future: cameraValue,
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.done) {
+                return Container(
+                  child: CameraPreview(camController),
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                ) ;
+              }
+              return Center(child: CircularProgressIndicator(),);
+          }),
           Container(
             margin: EdgeInsets.fromLTRB(0, 65, 0, 0),
             child: Row(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center,
