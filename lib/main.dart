@@ -71,9 +71,18 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
   }
 
+  Widget list () {
+    return Container(
+      padding: EdgeInsets.all(8),
+      decoration: BoxDecoration(),
+    );
+  }
+
   Widget _options_ () {
     return Center(child: Container(
-      child : Column(children: [],),
+      child : Column(children: [
+
+      ],),
       width: MediaQuery.of(context).size.width - 50,
       height: 400, decoration: BoxDecoration(
         color: Colors.transparent, border: Border.all(color: Colors.white),
