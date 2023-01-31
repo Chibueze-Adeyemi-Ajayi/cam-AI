@@ -246,10 +246,10 @@ class _MyHomePageState extends State<MyHomePage> {
             InputImage image = ImageProcessor.getInputImage(file);
 
             String text = await TextRecognition.captureText(image);
+
+            setState(() { _data = text; _showDialog = true; });
             
-            setState(() {
-              _data = text; _showDialog = true; _loading = false;
-            });
+            setState(() { _loading = false; });
 
           } catch (e) {
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Unexpected Error")));
