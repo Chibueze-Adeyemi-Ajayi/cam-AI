@@ -71,17 +71,20 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
   }
 
-  Widget list () {
+  Widget list (Widget widget) {
     return Container(
+      child: widget,
       padding: EdgeInsets.all(8),
-      decoration: BoxDecoration(),
+      decoration: BoxDecoration(
+        border: Border(bottom: BorderSide(color: Colors.white))
+      ),
     );
   }
 
   Widget _options_ () {
     return Center(child: Container(
       child : Column(children: [
-
+        list(Text("Menu"))
       ],),
       width: MediaQuery.of(context).size.width - 50,
       height: 400, decoration: BoxDecoration(
