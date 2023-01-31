@@ -1,3 +1,4 @@
+import 'package:cam_ai/Utils/BarcodeRecognition.dart';
 import 'package:cam_ai/Utils/ImageProcessor.dart';
 import 'package:cam_ai/Utils/TextRecognition.dart';
 import 'package:camera/camera.dart';
@@ -89,21 +90,21 @@ class _MyHomePageState extends State<MyHomePage> {
         list(Text("Choose Action", textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontSize: 20),)),
         GestureDetector(onTap: () {
           setState(() {
-              action = 0;
+              action = 0; _code = false;
               mode = "Text Recognition";
               _options = false;
             });
         }, child: list(Text("Text Recognition", textAlign: TextAlign.start, style: TextStyle(color: Colors.white,),)),),
         GestureDetector(onTap: () {
           setState(() {
-              action = 0;
+              action = 0;  _code = true;
               mode = "Barcode Scanning";
               _options = false;
             });
         }, child: list(Text("Barcode Scanning", textAlign: TextAlign.start, style: TextStyle(color: Colors.white,),)),),
         GestureDetector(onTap: () {
           setState(() {
-              action = 1;
+              action = 1;  _code = false;
               mode = "Pose detection";
               _options = false;
             });
@@ -143,7 +144,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   String _data = "", mode = "Text Recognition";
-  bool _showDialog = false, _loading = false, _options = false;
+  bool _showDialog = false, _loading = false, _options = false, _code = false;
   int action = 0;
 
   // alert dialog
@@ -229,9 +230,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     GestureDetector(
                       child : Icon(Icons.more_vert, color: Colors.white, size: 15,),
                       onTap: () {
-                        setState(() {
-                          _options = true;
-                        });
+                        setState(() { _options = true; _code = false; });
                       },
                     )
                   ]),
@@ -244,7 +243,7 @@ class _MyHomePageState extends State<MyHomePage> {
           _showDialog ? dialog() : Container(),
           _loading ? Center(child: CircularProgressIndicator(),) : Container(),
           _options ? _options_() : Container(),
-          action == 1 ? _barCodeRegion() : Container()
+          _code ? _barCodeRegion() : Container()
         ],),
         //color: Colors.transparent,
         width: MediaQuery.of(context).size.width,
@@ -264,7 +263,10 @@ class _MyHomePageState extends State<MyHomePage> {
               String text = await TextRecognition.captureText(image);
               setState(() { _data = text; _showDialog = true; });
             } else if (mode == 1) { //scanning bar code
-            
+              BarcodeRecognition barcodeRecognition = BarcodeRecognition.getInstance();
+              barcodeRecognition.processCode(image, (status, message) {
+
+              });
             } else if (mode == 2) { //detecting pose
 
             }
