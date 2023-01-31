@@ -72,7 +72,12 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Widget _options_ () {
-    return Container();
+    return Center(child: Container(
+      width: MediaQuery.of(context).size.width - 50,
+      height: 400, decoration: BoxDecoration(
+        color: Colors.transparent, border: Border.all(color: Colors.white),
+        borderRadius: BorderRadius.circular(8))
+    ),);
   }
 
   void capture () {
