@@ -92,11 +92,15 @@ class _MyHomePageState extends State<MyHomePage> {
         Container(
           margin: EdgeInsets.all(5),
           decoration: BoxDecoration(color: Colors.redAccent, borderRadius: BorderRadius.circular(8)),
-          width: 100, height: 40, child: TextButton(child: Text("Close", style: TextStyle(color: Colors.white),), onPressed: () {},),),
+          width: 100, height: 40, child: TextButton(child: Text("Close", style: TextStyle(color: Colors.white),), onPressed: () {
+            setState(() {
+              _options = false;
+            });
+          },),),
         
       ],),
       width: MediaQuery.of(context).size.width - 50,
-      height: 200, decoration: BoxDecoration(
+      height: 212, decoration: BoxDecoration(
         color: Colors.transparent, border: Border.all(color: Colors.white),
         borderRadius: BorderRadius.circular(8))
     ),);
@@ -107,7 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   String _data = "", mode = "Text Recognition";
-  bool _showDialog = false, _loading = false, _options = true;
+  bool _showDialog = false, _loading = false, _options = false;
 
   // alert dialog
   Widget dialog () {
@@ -192,7 +196,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     GestureDetector(
                       child : Icon(Icons.more_vert, color: Colors.white, size: 15,),
                       onTap: () {
-                        print("Hola");
+                        setState(() {
+                          _options = true;
+                        });
                       },
                     )
                   ]),
