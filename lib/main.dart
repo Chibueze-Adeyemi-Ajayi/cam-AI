@@ -75,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Container(
       width: MediaQuery.of(context).size.width,
       child: widget,
-      padding: EdgeInsets.all(8),
+      padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
         border: Border(bottom: BorderSide(color: Colors.white))
       ),
@@ -86,11 +86,13 @@ class _MyHomePageState extends State<MyHomePage> {
     return Center(child: Container(
       child : Column(children: [
         list(Text("Choose Action", textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontSize: 20),)),
-        list(Text("Text Recognition", textAlign: TextAlign.center, style: TextStyle(color: Colors.white,),))
-
+        GestureDetector(onTap: () {}, child: list(Text("Text Recognition", textAlign: TextAlign.start, style: TextStyle(color: Colors.white,),)),),
+        GestureDetector(onTap: () {}, child: list(Text("Barcode Scanning", textAlign: TextAlign.start, style: TextStyle(color: Colors.white,),)),),
+        GestureDetector(onTap: () {}, child: list(Text("Pose detection", textAlign: TextAlign.start, style: TextStyle(color: Colors.white,),)),)
+        
       ],),
       width: MediaQuery.of(context).size.width - 50,
-      height: 400, decoration: BoxDecoration(
+      height: 200, decoration: BoxDecoration(
         color: Colors.transparent, border: Border.all(color: Colors.white),
         borderRadius: BorderRadius.circular(8))
     ),);
