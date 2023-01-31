@@ -85,7 +85,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget _options_ () {
     return Center(child: Container(
       child : Column(children: [
-        list(Text("Choose Action", textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontSize: 20),))
+        list(Text("Choose Action", textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontSize: 20),)),
+        list(Text("Text Recognition", textAlign: TextAlign.center, style: TextStyle(color: Colors.white,),))
+
       ],),
       width: MediaQuery.of(context).size.width - 50,
       height: 400, decoration: BoxDecoration(
