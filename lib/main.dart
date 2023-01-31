@@ -133,7 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
         height: 300,
         margin: EdgeInsets.all(20),
         decoration: BoxDecoration(
-          border: Border.all(color: Colors.white, width: 3, style: BorderStyle.solid)
+          border: Border.all(color: Colors.white, width: 5, style: BorderStyle.solid)
         )
       ),
     );
@@ -145,7 +145,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   String _data = "", mode = "Text Recognition";
   bool _showDialog = false, _loading = false, _options = false, _code = false;
-  int action = 0;
+  int action = 0; String title = "RECOGNIZED TEXT"; 
 
   // alert dialog
   Widget dialog () {
@@ -160,7 +160,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                Text("RECOGNIZED TEXT", textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontSize: 15,),),
+                Text("$title", textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontSize: 15,),),
                 Container(width: 20,),
                 GestureDetector(onTap: () {
                     setState(() { _showDialog = false; });
@@ -261,11 +261,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
             if (mode == 0) { // recognizing text
               String text = await TextRecognition.captureText(image);
-              setState(() { _data = text; _showDialog = true; });
+              setState(() { title = "RECOGNIZED TEXT"; _data = text; _showDialog = true; });
             } else if (mode == 1) { //scanning bar code
               BarcodeRecognition barcodeRecognition = BarcodeRecognition.getInstance();
               barcodeRecognition.processCode(image, (status, message) {
-
+                setState(() { title = "SCANNED CODE"; _data = message; _showDialog = true; });
               });
             } else if (mode == 2) { //detecting pose
 
