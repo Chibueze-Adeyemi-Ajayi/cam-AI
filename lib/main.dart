@@ -259,15 +259,16 @@ class _MyHomePageState extends State<MyHomePage> {
             XFile file = await camController.takePicture();
             InputImage image = ImageProcessor.getInputImage(file);
 
-            if (mode == 0) { // recognizing text
+            if (action == 0) { // recognizing text
               String text = await TextRecognition.captureText(image);
               setState(() { title = "RECOGNIZED TEXT"; _data = text; _showDialog = true; });
-            } else if (mode == 1) { //scanning bar code
+            } else if (action == 1) { //scanning bar code
               BarcodeRecognition barcodeRecognition = BarcodeRecognition.getInstance();
               barcodeRecognition.processCode(image, (status, message) {
                 setState(() { title = "SCANNED CODE"; _data = message; _showDialog = true; });
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message.toString())));
               });
-            } else if (mode == 2) { //detecting pose
+            } else if (action == 2) { //detecting pose
 
             }
             
