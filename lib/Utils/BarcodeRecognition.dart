@@ -1,6 +1,6 @@
 import 'package:google_mlkit_barcode_scanning/google_mlkit_barcode_scanning.dart';
 import "dart:ui";
-// recognizing 
+// recognizing b
 class BarcodeRecognition {
 
   Future processCode (InputImage image) async {
