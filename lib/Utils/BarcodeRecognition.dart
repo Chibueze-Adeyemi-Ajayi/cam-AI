@@ -1,42 +1,42 @@
 import 'package:google_mlkit_barcode_scanning/google_mlkit_barcode_scanning.dart';
-
+import "dart:ui";
+// 
 class BarcodeRecognition {
 
-  static final List<BarcodeFormat> formats = [BarcodeFormat.all];
-  static var barcodeScanner;
-
-  static BarcodeRecognition getInstance () {
-    barcodeScanner = BarcodeScanner(formats: formats);
-    return new BarcodeRecognition();
-  }
-
-  Future <void> processCode (InputImage image, Function callback) async {
+  Future processCode (InputImage image) async {
 
     try {
 
+      String? response = "Empty barcode";
+      final List<BarcodeFormat> formats = [BarcodeFormat.all];
+      var barcodeScanner;
+
+      barcodeScanner = BarcodeScanner(formats: formats);
       final List<Barcode> barcodes = await barcodeScanner.processImage(image);
-        
+      //response = barcodes.toString();
         for (Barcode barcode in barcodes) {
               final BarcodeType type = barcode.type;
-              //final Rect boundingBox = barcode.boundingBox;
+              final Rect? boundingBox = barcode.boundingBox;
               final String? displayValue = barcode.displayValue;
               final String? rawValue = barcode.rawValue;
-
+              response = rawValue;
               // See API reference for complete list of supported types
               switch (type) {
                 case BarcodeType.wifi:
-                  var barcodeWifi = barcode.value;
-                  callback(true, barcodeWifi);
-                  break;
+                  var barcodeWifi = barcode.rawValue;
+                  //response = barcodeWifi.toString();
+                break;
                 case BarcodeType.url:
                   var barcodeUrl = barcode.value;
-                  callback(true, barcodeUrl);
-                  break;
-                default: callback(false, "Unknown bar code");
+                  //response = barcodeUrl;
+                break;
+                default: response = "Unknown bar code";
               }
         }
 
-    } catch (e) { callback(false, e.toString());}
+        return response;
+
+    } catch (e) {  }
 
   }
 

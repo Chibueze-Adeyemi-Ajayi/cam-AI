@@ -263,11 +263,9 @@ class _MyHomePageState extends State<MyHomePage> {
               String text = await TextRecognition.captureText(image);
               setState(() { title = "RECOGNIZED TEXT"; _data = text; _showDialog = true; });
             } else if (action == 1) { //scanning bar code
-              BarcodeRecognition barcodeRecognition = BarcodeRecognition.getInstance();
-              barcodeRecognition.processCode(image, (status, message) {
-                setState(() { title = "SCANNED CODE"; _data = message; _showDialog = true; });
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message.toString())));
-              });
+              var result = await BarcodeRecognition().processCode(image);
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(result)));
+              setState(() { title = "SCANNED CODE"; _data = result; _showDialog = true; });
             } else if (action == 2) { //detecting pose
 
             }
@@ -276,7 +274,7 @@ class _MyHomePageState extends State<MyHomePage> {
             setState(() { _loading = false; });
 
           } catch (e) {
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Unexpected Error")));
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Unexpected Error" + e.toString())));
           }
            
         },
