@@ -3,7 +3,7 @@ import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart
 
 class TextRecognition {
 
-  //  recognizing text fro
+  //  recognizing text fr
    static Future <String> captureText (InputImage inputImage) async {
       print("object");
       final textRecognizer = TextRecognizer(script: TextRecognitionScript.latin);
