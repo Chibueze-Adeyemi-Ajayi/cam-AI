@@ -1,5 +1,5 @@
 import 'package:learning_digital_ink_recognition/learning_digital_ink_recognition.dart';
-// this code section is for ink rec
+// this code section is for ink reco
 class InkRecognition {
 
   // language code
