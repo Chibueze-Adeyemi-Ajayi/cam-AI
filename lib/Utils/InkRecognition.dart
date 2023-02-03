@@ -6,7 +6,7 @@ class InkRecognition {
   static String model = "en-US"; // BCP-47 Code from https://developers.google.com/ml-kit/vision/digital-ink-recognition/base-models?hl=en#text
   static DigitalInkRecognition recognition = DigitalInkRecognition(model: model);
 
-  // processing digital ink in ml pac
+  // processing digital ink in ml pack
   static Future processInk () async {
     // downloading model 
     // model is a string value, e.g. 'en-US'
