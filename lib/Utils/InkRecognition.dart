@@ -2,7 +2,7 @@ import 'package:learning_digital_ink_recognition/learning_digital_ink_recognitio
 
 class InkRecognition {
 
-  // language code 
+  // language code
   static String model = "en-US"; // BCP-47 Code from https://developers.google.com/ml-kit/vision/digital-ink-recognition/base-models?hl=en#text
   static DigitalInkRecognition recognition = DigitalInkRecognition(model: model);
 
