@@ -29,9 +29,11 @@ class ImageProcessor {
         final y = cameraImage.planes[0].bytes[yIndex];
         final u = cameraImage.planes[1].bytes[uvIndex];
         final v = cameraImage.planes[2].bytes[uvIndex];
-
-        final data_ = (yuv2rgb(y, u, v) != null);
-        image.data[index] = data_ != null ? data_ : 5;
+S
+        if (image.data != null) {
+          final data_ = (yuv2rgb(y, u, v) != null);
+          image.data[index] = data_ != null ? data_ : 5;
+        }
       }
     }
     return image;
