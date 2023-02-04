@@ -45,6 +45,11 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
   // continously capturing video
+  void captureVideo () {
+    camController.startVideoRecording((CameraImage) {
+      
+    });
+  }
 
   @override
   void dispose() {
