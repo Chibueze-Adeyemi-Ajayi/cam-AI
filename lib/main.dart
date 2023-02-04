@@ -149,7 +149,9 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void streamLiveImage () async {
-    await camController.startImageStream((image) => null); 
+    await camController.startImageStream((CameraImage image) {
+
+    }); 
   }
 
   void stopLiveImageStream () async {
