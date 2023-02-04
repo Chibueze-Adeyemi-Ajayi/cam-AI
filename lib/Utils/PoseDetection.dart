@@ -1,4 +1,4 @@
-// for detectoing pose in an image
+// for detecting pose in an image
 
 class PoseDetection {
 
