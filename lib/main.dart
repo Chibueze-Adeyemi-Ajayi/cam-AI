@@ -4,8 +4,7 @@ import 'package:cam_ai/Utils/TextRecognition.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_mlkit_commons/google_mlkit_commons.dart';
+import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
 
 late CameraController camController;
 late Future<void> cameraValue;
@@ -49,6 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void initCam () async {
     camController = CameraController(cameras[0], ResolutionPreset.max);
+    camController.addListener(() { });
     cameraValue = camController.initialize().then((_) => {
         if (!mounted) {
           showDialog(context: context, builder: (context) {
@@ -264,7 +264,7 @@ class _MyHomePageState extends State<MyHomePage> {
               setState(() { title = "RECOGNIZED TEXT"; _data = text; _showDialog = true; });
             } else if (action == 1) { //scanning bar code
               var result = await BarcodeRecognition().processCode(image);
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(result)));
+              //ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(result)));
               setState(() { title = "SCANNED CODE"; _data = result; _showDialog = true; });
             } else if (action == 2) { //detecting pose
 
