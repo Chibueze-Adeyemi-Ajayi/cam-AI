@@ -46,9 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   // continously capturing video
   void captureVideo () {
-    camController.startVideoRecording((CameraImage camImage) {
-
-    });
+    camController.startVideoRecording();
   }
 
   @override
@@ -151,6 +149,14 @@ class _MyHomePageState extends State<MyHomePage> {
         )
       ),
     );
+  }
+
+  void streamLiveImage () async {
+    await camController.startImageStream((image) => null); 
+  }
+
+  void stopLiveImageStream () async {
+    await camController.stopImageStream();
   }
 
   void capture () {
