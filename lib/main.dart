@@ -1,4 +1,4 @@
-// mobile app fo
+// mobile app for
 
 import 'package:cam_ai/Utils/BarcodeRecognition.dart';
 import 'package:cam_ai/Utils/ImageProcessor.dart';
