@@ -58,9 +58,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void initCam () async {
     camController = CameraController(cameras[0], ResolutionPreset.max);
-    camController.addListener(() { 
-
-    });
     cameraValue = camController.initialize().then((_) => {
         if (!mounted) {
           showDialog(context: context, builder: (context) {
