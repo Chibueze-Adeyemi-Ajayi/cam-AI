@@ -46,8 +46,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   // continously capturing video
   void captureVideo () {
-    camController.startVideoRecording((CameraImage) {
-      
+    camController.startVideoRecording((CameraImage camImage) {
+
     });
   }
 
