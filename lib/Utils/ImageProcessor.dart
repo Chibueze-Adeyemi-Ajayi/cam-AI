@@ -1,6 +1,8 @@
 import 'dart:typed_data';
 
 import 'package:camera/camera.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/rendering.dart';
 import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
 import 'package:image/image.dart' as image_lib;
 
@@ -10,8 +12,7 @@ class ImageProcessor {
       return InputImage.fromFilePath(file.path);
     }
 
-    static InputImage convertCameraImage (CameraImage cam_img) {
-      final camera; // your camera instance
+    static InputImage convertCameraImage (CameraImage cameraImage, camera) {
       final WriteBuffer allBytes = WriteBuffer();
       for (Plane plane in cameraImage.planes) {
         allBytes.putUint8List(plane.bytes);
@@ -20,7 +21,7 @@ class ImageProcessor {
 
       final Size imageSize = Size(cameraImage.width.toDouble(), cameraImage.height.toDouble());
 
-      InputImageRotation imageRotation = InputImageRotation.Rotation_0deg;
+      InputImageRotation imageRotation = InputImageRotation.rotation0deg;
       switch (camera.sensorOrientation) {
         case 0:
           imageRotation = InputImageRotation.rotation0deg;
@@ -44,6 +45,7 @@ class ImageProcessor {
       );
 
       final inputImage = InputImage.fromBytes(bytes: bytes, inputImageData: inputImageData);
+      return inputImage;
     }
 
 }
