@@ -151,11 +151,13 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void streamLiveImage () async {
-    await camController.startImageStream((CameraImage cameraImage) {
+    await camController.startImageStream((CameraImage cameraImage) async {
         // processing the capturing frame
         InputImage image = ImageProcessor.getInputImageFromLiveStream(cameraImage, cameras[0]);
         // detecting poses from that frame
-        List<Pose> = await PoseDetector.getPose(image);
+        List<Pose> poses = await PoseDetection.getPose(image);
+        // printing out the poses
+        print(poses);
     }); 
   }
 
