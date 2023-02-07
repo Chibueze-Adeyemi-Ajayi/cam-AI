@@ -31,7 +31,7 @@ class ImageProcessor {
 
         final image_lib.ImageData? img_data = image.data;
         if (img_data != null) {
-          img_data[index] = (yuv2rgb(y, u, v));
+          //img_data[index] = (yuv2rgb(y, u, v));
         }
         
       }
