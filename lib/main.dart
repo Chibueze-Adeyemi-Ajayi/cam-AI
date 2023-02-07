@@ -293,9 +293,8 @@ class _MyHomePageState extends State<MyHomePage> {
               //ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(result)));
               setState(() { title = "SCANNED CODE"; _data = result; _showDialog = true; });
             } else if (action == 2) { //detecting pose
-
+              streamLiveImage();
             }
-            
             
             setState(() { _loading = false; });
 
