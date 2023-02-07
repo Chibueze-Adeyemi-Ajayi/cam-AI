@@ -12,7 +12,7 @@ class ImageProcessor {
       return InputImage.fromFilePath(file.path);
     }
 
-    static InputImage convertCameraImage (CameraImage cameraImage, camera) {
+    static InputImage getInputImageFromLiveStream (CameraImage cameraImage, camera) {
       final WriteBuffer allBytes = WriteBuffer();
       for (Plane plane in cameraImage.planes) {
         allBytes.putUint8List(plane.bytes);

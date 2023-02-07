@@ -5,10 +5,12 @@
 
 import 'package:cam_ai/Utils/BarcodeRecognition.dart';
 import 'package:cam_ai/Utils/ImageProcessor.dart';
+import 'package:cam_ai/Utils/PoseDetection.dart';
 import 'package:cam_ai/Utils/TextRecognition.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_mlkit_pose_detection/google_mlkit_pose_detection.dart';
 import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
 
 late CameraController camController;
@@ -149,8 +151,11 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void streamLiveImage () async {
-    await camController.startImageStream((CameraImage image) {
-      
+    await camController.startImageStream((CameraImage cameraImage) {
+        // processing the capturing frame
+        InputImage image = ImageProcessor.getInputImageFromLiveStream(cameraImage, cameras[0]);
+        // detecting poses from that frame
+        List<Pose> = await PoseDetector.getPose(image);
     }); 
   }
 
