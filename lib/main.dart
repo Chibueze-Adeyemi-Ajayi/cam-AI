@@ -53,13 +53,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
+    // TODO: implement dispose 
     super.dispose();
     camController.dispose();
   }
 
   void initCam () async {
-    camController = CameraController(cameras[0], ResolutionPreset.medium);
+    camController = CameraController(cameras[0], ResolutionPreset.low);
     cameraValue = camController.initialize().then((_) => {
         if (!mounted) {
           showDialog(context: context, builder: (context) {
@@ -159,7 +159,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // detecting poses from that frame
         List<Pose> poses = await PoseDetection.getPose(image);
         // printing out the poses
-        print(poses);
+        setState(() { title = "POSES"; _data = poses.toString(); _showDialog = true; });
     }); 
   }
 
