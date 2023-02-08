@@ -159,7 +159,16 @@ class _MyHomePageState extends State<MyHomePage> {
         // detecting poses from that frame
         List<Pose> poses = await PoseDetection.getPose(image);
         // printing out the poses
-        setState(() { title = "POSES"; _data = poses.toString(); _showDialog = true; });
+        String output = "";
+        for (Pose pose in poses) {
+          pose.landmarks.forEach((_, landmark) {
+            final type = landmark.type;
+            final x = landmark.x;
+            final y = landmark.y;
+            output += type.toString() + "\n" + "X:$x\nY:$y";
+          });
+        }
+        setState(() { title = "POSES"; _data = output; _showDialog = true; });
     }); 
   }
 
