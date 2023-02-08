@@ -7,6 +7,7 @@ import 'package:cam_ai/Utils/BarcodeRecognition.dart';
 import 'package:cam_ai/Utils/ImageProcessor.dart';
 import 'package:cam_ai/Utils/PoseDetection.dart';
 import 'package:cam_ai/Utils/TextRecognition.dart';
+import 'package:cam_ai/Utils/mycanvas.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
