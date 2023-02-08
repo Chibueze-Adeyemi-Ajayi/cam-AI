@@ -104,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
               action = 0; _code = false;
               mode = "Text Recognition";
               _options = false;
-              stopLiveImageStream(); // stoping livestream if running
+              // stopLiveImageStream(); // stoping livestream if running
             });
         }, child: list(Text("Text Recognition", textAlign: TextAlign.start, style: TextStyle(color: Colors.white,),)),),
         GestureDetector(onTap: () {
@@ -112,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
               action = 1;  _code = true;
               mode = "Barcode Scanning";
               _options = false;
-              stopLiveImageStream(); // stoping livestream if running
+              // stopLiveImageStream(); // stoping livestream if running
             });
         }, child: list(Text("Barcode Scanning", textAlign: TextAlign.start, style: TextStyle(color: Colors.white,),)),),
         GestureDetector(onTap: () {
