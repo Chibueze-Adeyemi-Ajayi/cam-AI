@@ -46,6 +46,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
+  bool streaming = false;
+
   // continously capturing video
   void captureVideo () {
     camController.startVideoRecording();
@@ -104,7 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
               action = 0; _code = false;
               mode = "Text Recognition";
               _options = false;
-              // stopLiveImageStream(); // stoping livestream if running
+              if (streaming) stopLiveImageStream(); // stoping livestream if running
             });
         }, child: list(Text("Text Recognition", textAlign: TextAlign.start, style: TextStyle(color: Colors.white,),)),),
         GestureDetector(onTap: () {
@@ -112,7 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
               action = 1;  _code = true;
               mode = "Barcode Scanning";
               _options = false;
-              // stopLiveImageStream(); // stoping livestream if running
+              if (streaming) stopLiveImageStream(); // stoping livestream if running
             });
         }, child: list(Text("Barcode Scanning", textAlign: TextAlign.start, style: TextStyle(color: Colors.white,),)),),
         GestureDetector(onTap: () {
@@ -155,6 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void streamLiveImage () async {
     await camController.startImageStream((CameraImage cameraImage) async {
         // processing the capturing frame
+        streaming = true;
         InputImage image = ImageProcessor.getInputImageFromLiveStream(cameraImage, cameras[0]);
         // detecting poses from that frame
         List<Pose> poses = await PoseDetection.getPose(image);
