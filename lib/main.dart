@@ -187,6 +187,17 @@ class _MyHomePageState extends State<MyHomePage> {
   bool _showDialog = false, _loading = false, _options = false, _code = false;
   int action = 0; String title = "RECOGNIZED TEXT"; 
 
+  // painitng palava
+  Widget canvas () {
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height,
+      child: CustomPaint(
+          painter: OpenPainter(),
+        ),
+    );
+  }
+
   // alert dialog
   Widget dialog () {
     return Center(child: Container(
