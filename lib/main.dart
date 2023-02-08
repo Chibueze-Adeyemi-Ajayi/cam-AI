@@ -13,7 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:google_mlkit_pose_detection/google_mlkit_pose_detection.dart';
 import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
 
-// computer v
+// computer vi
 late CameraController camController;
 late Future<void> cameraValue;
 late List <CameraDescription> cameras;
