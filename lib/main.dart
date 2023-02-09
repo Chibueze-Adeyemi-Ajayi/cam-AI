@@ -187,7 +187,7 @@ class _MyHomePageState extends State<MyHomePage> {
   String _data = "", mode = "Text Recognition";
   bool _showDialog = false, _loading = false, _options = false, _code = false;
   int action = 0; String title = "RECOGNIZED TEXT"; 
-  // 10 minute github
+  // 10 minute github 
   // painitng palava
   Widget canvas () {
     return Container(
