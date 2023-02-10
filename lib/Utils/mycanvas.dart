@@ -10,7 +10,8 @@ class OpenPainter extends CustomPainter {
       ..color = Color(0xff63aa65)
       ..strokeWidth = 10;
     //list of points
-    var points = [Offset(50, 50),
+    var points = [
+      Offset(50, 50),
       Offset(80, 70),
       Offset(380, 175),
       Offset(200, 175),
@@ -20,6 +21,7 @@ class OpenPainter extends CustomPainter {
       Offset(89, 125)];
     //draw points on canvas
     canvas.drawPoints(PointMode.points, points, paint1);
+    canvas.drawLine(Offset(0, 0), Offset(100, 100), paint1);
   }
 
   @override
