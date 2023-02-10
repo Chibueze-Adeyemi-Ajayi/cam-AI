@@ -14,7 +14,7 @@ final List<Offset> offsets;
     //list of points
     var length = offsets.length / 2;
     for (var i = 0; i < length; i++) {
-      canvas.drawLine(offsets[i], offsets[i + 1], paint1);
+      canvas.drawLine(offsets[i], offsets[i], paint1);
     }
     
   }

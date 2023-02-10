@@ -163,16 +163,19 @@ class _MyHomePageState extends State<MyHomePage> {
         // detecting poses from that frame
         List<Pose> poses = await PoseDetection.getPose(image);
         // printing out the poses
+        List <Offset> landmarks = [];
         String output = "";
         for (Pose pose in poses) {
           pose.landmarks.forEach((_, landmark) {
             final type = landmark.type;
             final x = landmark.x;
             final y = landmark.y;
+            landmarks.add(Offset(x, y));
             output += type.toString() + "\n" + "X:$x\nY:$y";
           });
         }
-        setState(() { title = "POSES"; _data = output; _showDialog = true; });
+        
+        setState(() { title = "POSES"; _data = canvas(landmarks); _showDialog = true; });
     }); 
   }
 
@@ -184,22 +187,17 @@ class _MyHomePageState extends State<MyHomePage> {
     camController.takePicture();
   }
 
-  String _data = "", mode = "Text Recognition";
+  String _data = "", mode = "Text Recognition"; Widget pose_widget = Container();
   bool _showDialog = false, _loading = false, _options = false, _code = false;
   int action = 0; String title = "RECOGNIZED TEXT"; 
   
   // painitng palava
-  Widget canvas () {
+  Widget canvas (List <Offset> array) {
     return Container(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
       child: CustomPaint(
-          painter: OpenPainter(offsets: [
-            Offset(0, 4),
-            Offset(10, 24),
-            Offset(24, 10),
-            Offset(100, 240),
-          ]),
+          painter: OpenPainter(offsets: array),
         ),
     );
   }
@@ -301,7 +299,7 @@ class _MyHomePageState extends State<MyHomePage> {
           _loading ? Center(child: CircularProgressIndicator(),) : Container(),
           _options ? _options_() : Container(),
           _code ? _barCodeRegion() : Container(),
-          canvas()
+          //canvas()
         ],),
         //color: Colors.transparent,
         width: MediaQuery.of(context).size.width,
