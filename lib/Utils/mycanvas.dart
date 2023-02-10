@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 // this is this the paint application for displaying detected poses
-// expected input is a pose
+// expected input is a pose 
 class OpenPainter extends CustomPainter {
 @override
   void paint(Canvas canvas, Size size) {
