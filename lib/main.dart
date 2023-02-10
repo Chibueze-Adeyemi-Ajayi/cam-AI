@@ -295,7 +295,8 @@ class _MyHomePageState extends State<MyHomePage> {
           _showDialog ? dialog() : Container(),
           _loading ? Center(child: CircularProgressIndicator(),) : Container(),
           _options ? _options_() : Container(),
-          _code ? _barCodeRegion() : Container()
+          _code ? _barCodeRegion() : Container(),
+          canvas()
         ],),
         //color: Colors.transparent,
         width: MediaQuery.of(context).size.width,
