@@ -194,7 +194,12 @@ class _MyHomePageState extends State<MyHomePage> {
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
       child: CustomPaint(
-          painter: OpenPainter(),
+          painter: OpenPainter(offsets: [
+            Offset(0, 4),
+            Offset(10, 24),
+            Offset(24, 10),
+            Offset(100, 240),
+          ]),
         ),
     );
   }
