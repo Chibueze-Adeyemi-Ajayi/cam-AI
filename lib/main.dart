@@ -174,8 +174,8 @@ class _MyHomePageState extends State<MyHomePage> {
             output += type.toString() + "\n" + "X:$x\nY:$y";
           });
         }
-        
-        setState(() { title = "POSES"; _data = canvas(landmarks); _showDialog = true; });
+        print(output);
+        setState(() { title = "POSES"; pose_widget = canvas(landmarks); _showDialog = true; });
     }); 
   }
 
@@ -226,7 +226,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: SingleChildScrollView(child: Column(
                 children: [
                   Container(
-                    padding: EdgeInsets.all(8), child:  Text(_data, style: TextStyle(color: Colors.white),),)
+                    padding: EdgeInsets.all(8), 
+                    child: title.indexOf("POSES") > -1 ? pose_widget : Text(_data, style: TextStyle(color: Colors.white),
+                  ),)
               ],)),
               )
            ],),

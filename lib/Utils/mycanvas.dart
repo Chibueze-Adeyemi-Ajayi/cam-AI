@@ -13,9 +13,9 @@ final List<Offset> offsets;
       ..strokeWidth = 5;
     //list of points
     var length = offsets.length / 2;
-    for (var i = 0; i < length; i++) {
-      canvas.drawLine(offsets[i], offsets[i], paint1);
-    }
+    // for (var i = 0; i < length; i++) {
+      canvas.drawPoints(PointMode.points, offsets, paint1);
+    // }
     
   }
 
