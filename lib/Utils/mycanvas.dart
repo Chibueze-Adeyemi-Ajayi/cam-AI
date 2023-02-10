@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
-// this is this the paint applica
+// this is this the paint applicat
 class OpenPainter extends CustomPainter {
 @override
   void paint(Canvas canvas, Size size) {
