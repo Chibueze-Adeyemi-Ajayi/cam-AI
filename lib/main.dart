@@ -162,7 +162,8 @@ class _MyHomePageState extends State<MyHomePage> {
       height:  MediaQuery.of(context).size.height,
       color: Color.fromARGB(125, 41, 40, 40),
       child: Column(children: [
-        
+        Text("Detecting Pose Landmarks", textAlign: TextAlign.center, style: TextStyle(color: Colors.white)),
+        Container(height: 1, margin: EdgeInsets.fromLTRB(0, 10, 0, 10),),
       ],),
     );
   }
@@ -178,13 +179,25 @@ class _MyHomePageState extends State<MyHomePage> {
         List <Offset> landmarks = [];
         String output = "";
         for (Pose pose in poses) {
-          pose.landmarks.forEach((_, landmark) {
-            final type = landmark.type;
-            final x = landmark.x;
-            final y = landmark.y;
-            landmarks.add(Offset(x, y));
-            output += type.toString() + "\n" + "X:$x\nY:$y";
-          });
+          final right_shoulder = pose.landmarks[PoseLandmarkType.rightShoulder];
+          final right_shoulder = pose.landmarks[PoseLandmarkType.rightShoulder];
+          final right_shoulder = pose.landmarks[PoseLandmarkType.rightShoulder];
+          final right_shoulder = pose.landmarks[PoseLandmarkType.rightShoulder];
+          final right_shoulder = pose.landmarks[PoseLandmarkType.rightShoulder];
+          final right_shoulder = pose.landmarks[PoseLandmarkType.rightShoulder];
+          final right_shoulder = pose.landmarks[PoseLandmarkType.rightShoulder];
+          final right_shoulder = pose.landmarks[PoseLandmarkType.rightShoulder];
+          final right_shoulder = pose.landmarks[PoseLandmarkType.rightShoulder];
+          final right_shoulder = pose.landmarks[PoseLandmarkType.rightShoulder];
+          final right_shoulder = pose.landmarks[PoseLandmarkType.rightShoulder];
+          final right_shoulder = pose.landmarks[PoseLandmarkType.rightShoulder];
+          // pose.landmarks.forEach((_, landmark) {
+          //   final type = landmark.type;
+          //   final x = landmark.x;
+          //   final y = landmark.y;
+          //   landmarks.add(Offset(x, y));
+          //   output += type.toString() + "\n" + "X:$x\nY:$y";
+          // });
         }
         print(output);
     }); 
