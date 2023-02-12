@@ -160,7 +160,14 @@ class _MyHomePageState extends State<MyHomePage> {
     "Right Wrist", "Left Wrist", "Right Hip", "Left Hip", 
     "Right Knee", "Left Knee", "Right Ankle", "Left Ankle"
   ];
-  Widget tab (String label) {
+  List <int> r_shoulder = [0, 0]; List <int> l_shoulder = [0, 0];
+  List <int> r_elbow = [0, 0]; List <int> l_elbow = [0, 0];
+  List <int> r_wrist = [0, 0]; List <int> l_wrist = [0, 0];
+  List <int> r_hip = [0, 0]; List <int> l_hip = [0, 0];
+  List <int> r_knee = [0, 0]; List <int> l_knee = [0, 0];
+  List <int> r_ankle = [0, 0]; List <int> l_ankle = [0, 0];
+
+  Widget tab (String label, List <int> coordinates) {
     return Container(
       decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.white))),
       padding: EdgeInsets.all(9),
@@ -168,9 +175,9 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Row(children: [
         Text(label, style: TextStyle(color: Colors.white),), Container(width: 25,),
         Column(children: [
-          Text("X: ",style: TextStyle(color: Colors.white)),
+          Text("X: " + coordinates[0].toString(),style: TextStyle(color: Colors.white)),
           Container(height: 10, decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.white, width: 1))),),
-          Text("Y: ",style: TextStyle(color: Colors.white)),
+          Text("Y: " + coordinates[1].toString(),style: TextStyle(color: Colors.white)),
         ],)
       ],),
     );
