@@ -157,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   List <String> landmarks = [ 
     "Right Shoulder", "Left Shoulder", "Right Elbow", "Left Elbow", 
-    "Right Wrist", "Left Wrist", "Right Hip", "Left Hip" 
+    "Right Wrist", "Left Wrist", "Right Hip", "Left Hip", 
     "Right Knee", "Left Knee", "Right Ankle", "Left Ankle"
   ];
   Widget tab (String label) {
@@ -193,11 +193,10 @@ class _MyHomePageState extends State<MyHomePage> {
         ),),
         Container(
             width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
+            height: MediaQuery.of(context).size.height - 100,
             child: SingleChildScrollView(
           child: Container(
             width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
             child: Column(children: children,)),
           ),
         ),
