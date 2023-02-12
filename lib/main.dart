@@ -166,6 +166,11 @@ class _MyHomePageState extends State<MyHomePage> {
         Container(height: 1, margin: EdgeInsets.fromLTRB(0, 10, 0, 10), decoration: BoxDecoration(
           border: Border(bottom: BorderSide(color: Colors.white))
         ),),
+        SingleChildScrollView(
+          child: Container(child: Column(children: [
+            
+          ],)),
+        )
       ],),
     );
   }
@@ -333,7 +338,15 @@ class _MyHomePageState extends State<MyHomePage> {
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: pose_detection ? FloatingActionButton(
+        backgroundColor: Color.fromARGB(255, 150, 6, 6),
+        tooltip: 'Close Pose detection',
+        child: const Icon(CupertinoIcons.switch_camera),
+        onPressed: () {
+          setState(() {
+            pose_detection = false;
+          });
+      }) : FloatingActionButton(
         backgroundColor: Color.fromARGB(255, 150, 6, 6),
         onPressed: () async {
           try {
@@ -353,7 +366,10 @@ class _MyHomePageState extends State<MyHomePage> {
               //ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(result)));
               setState(() { title = "SCANNED CODE"; _data = result; _showDialog = true; });
             } else if (action == 2) { //detecting pose
-              streamLiveImage();
+               setState(() {
+                 pose_detection = true;
+               });
+              // streamLiveImage();
             }
             
             setState(() { _loading = false; });
