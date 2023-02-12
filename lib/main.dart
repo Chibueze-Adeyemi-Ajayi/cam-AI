@@ -155,6 +155,15 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+  List <String> landmarks = [ "Shoulder", "Elbow", "Wrist", "Hip", "Knee", "Ankle" ];
+  Widget tab (String label) {
+    return Container(
+      padding: EdgeInsets.all(8),
+      width: MediaQuery.of(context).size.width, height: 50,
+      Row(),
+    );
+  }
+
   Widget poseWidget () {
     return Container(
       padding: EdgeInsets.fromLTRB(10, 45, 10, 10),
@@ -168,7 +177,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),),
         SingleChildScrollView(
           child: Container(child: Column(children: [
-            
+
           ],)),
         )
       ],),
