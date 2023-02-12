@@ -160,6 +160,12 @@ class _MyHomePageState extends State<MyHomePage> {
     "Right Wrist", "Left Wrist", "Right Hip", "Left Hip", 
     "Right Knee", "Left Knee", "Right Ankle", "Left Ankle"
   ];
+  double r_shoulder_x = 0, r_shoulder_y = 0, l_shoulder_x = 0, l_shoulder_y = 0;
+  double r_elbow_x = 0, r_elbow_y = 0, l_elbow_x = 0, l_elbow_y = 0;
+  double r_wrist_x = 0, r_wrist_y = 0, l_wrist_x = 0, l_wrist_y = 0;
+  double r_hip_x = 0, r_hip_y = 0, l_hip_x = 0, l_hip_y = 0;
+  double r_knee_x = 0, r_knee_y = 0, l_knee_x = 0, l_knee_y = 0;
+  double r_ankle_x = 0, r_ankle_y = 0, l_ankle_x = 0, l_ankle_y = 0;
   
   Widget tab (String label, List <int> coordinates) {
     return Container(
@@ -180,7 +186,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget poseWidget () {
     var x  = -1; List <Widget> children = [];
     landmarks.forEach((landmark){ x ++;
-      children.add(tab(landmark, co_ordinates[0]));
+      children.add(tab(landmark));
     });
     return Container(
       padding: EdgeInsets.fromLTRB(10, 45, 10, 10),
