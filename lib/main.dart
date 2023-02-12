@@ -155,6 +155,18 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+  Widget poseWidget () {
+    return Container(
+      padding: EdgeInsets.all(10),
+      width: MediaQuery.of(context).size.width,
+      height:  MediaQuery.of(context).size.height,
+      color: Color.fromARGB(125, 41, 40, 40),
+      child: Column(children: [
+        
+      ],),
+    );
+  }
+
   void streamLiveImage () async {
     await camController.startImageStream((CameraImage cameraImage) async {
         // processing the capturing frame
