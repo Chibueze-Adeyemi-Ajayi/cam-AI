@@ -149,7 +149,7 @@ class _MyHomePageState extends State<MyHomePage> {
         height: 300,
         margin: EdgeInsets.all(20),
         decoration: BoxDecoration(
-          border: Border.all(color: Colors.white, width: 5, style: BorderStyle.solid)
+          border: Border.all(color: Colors.white, width: 15, style: BorderStyle.solid)
         )
       ),
     );
@@ -158,15 +158,25 @@ class _MyHomePageState extends State<MyHomePage> {
   List <String> landmarks = [ "Shoulder", "Elbow", "Wrist", "Hip", "Knee", "Ankle" ];
   Widget tab (String label) {
     return Container(
+      decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.white))),
       padding: EdgeInsets.all(9),
-      width: MediaQuery.of(context).size.width, height: 50,
+      width: MediaQuery.of(context).size.width, height: 70,
       child: Row(children: [
-        
+        Text(label, style: TextStyle(color: Colors.white),), Container(width: 25,),
+        Column(children: [
+          Text("X: ",style: TextStyle(color: Colors.white)),
+          Container(height: 10, decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.white))),),
+          Text("Y: ",style: TextStyle(color: Colors.white)),
+        ],)
       ],),
     );
   }
 
   Widget poseWidget () {
+    List <Widget> children = [];
+    landmarks.forEach((landmark){
+      children.add(tab(landmark));
+    });
     return Container(
       padding: EdgeInsets.fromLTRB(10, 45, 10, 10),
       width: MediaQuery.of(context).size.width,
@@ -178,9 +188,7 @@ class _MyHomePageState extends State<MyHomePage> {
           border: Border(bottom: BorderSide(color: Colors.white))
         ),),
         SingleChildScrollView(
-          child: Container(child: Column(children: [
-
-          ],)),
+          child: Container(child: Column(children: children,)),
         )
       ],),
     );
