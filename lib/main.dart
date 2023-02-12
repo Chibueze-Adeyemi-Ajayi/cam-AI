@@ -160,13 +160,7 @@ class _MyHomePageState extends State<MyHomePage> {
     "Right Wrist", "Left Wrist", "Right Hip", "Left Hip", 
     "Right Knee", "Left Knee", "Right Ankle", "Left Ankle"
   ];
-  List <double> r_shoulder = [0, 0]; List <double> l_shoulder = [0, 0];
-  List <double> r_elbow = [0, 0]; List <double> l_elbow = [0, 0];
-  List <double> r_wrist = [0, 0]; List <double> l_wrist = [0, 0];
-  List <double> r_hip = [0, 0]; List <double> l_hip = [0, 0];
-  List <double> r_knee = [0, 0]; List <double> l_knee = [0, 0];
-  List <double> r_ankle = [0, 0]; List <double> l_ankle = [0, 0];
-  List <List <double>> co_ordinates = [];
+  
   Widget tab (String label, List <int> coordinates) {
     return Container(
       decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.white))),
@@ -184,15 +178,9 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Widget poseWidget () {
-    
-    co_ordinates = [
-      r_shoulder, l_shoulder, r_elbow, l_elbow, 
-      r_wrist, l_wrist, r_hip, l_hip, r_ankle, l_ankle,
-      l_knee, r_knee,
-    ];
-    int x  = -1; List <Widget> children = [];
+    var x  = -1; List <Widget> children = [];
     landmarks.forEach((landmark){ x ++;
-      children.add(tab(landmark, co_ordinates[x]));
+      children.add(tab(landmark, co_ordinates[0]));
     });
     return Container(
       padding: EdgeInsets.fromLTRB(10, 45, 10, 10),
@@ -243,7 +231,7 @@ class _MyHomePageState extends State<MyHomePage> {
           final left_ankle = pose.landmarks[PoseLandmarkType.leftAnkle];
           
           setState(() {
-            co_ordinates[0] = [ right_shoulder.x, right_shoulder.y ]
+            
           });
 
         }
