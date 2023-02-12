@@ -180,13 +180,13 @@ class _MyHomePageState extends State<MyHomePage> {
         String output = "";
         for (Pose pose in poses) {
           final right_shoulder = pose.landmarks[PoseLandmarkType.rightShoulder];
-          final right_shoulder = pose.landmarks[PoseLandmarkType.rightShoulder];
-          final right_shoulder = pose.landmarks[PoseLandmarkType.rightShoulder];
-          final right_shoulder = pose.landmarks[PoseLandmarkType.rightShoulder];
-          final right_shoulder = pose.landmarks[PoseLandmarkType.rightShoulder];
-          final right_shoulder = pose.landmarks[PoseLandmarkType.rightShoulder];
-          final right_shoulder = pose.landmarks[PoseLandmarkType.rightShoulder];
-          final right_shoulder = pose.landmarks[PoseLandmarkType.rightShoulder];
+          final left_shoulder = pose.landmarks[PoseLandmarkType.leftShoulder];
+          final right_elbow = pose.landmarks[PoseLandmarkType.rightElbow];
+          final left_elbow = pose.landmarks[PoseLandmarkType.leftElbow];
+          final right_wrist = pose.landmarks[PoseLandmarkType.rightWrist];
+          final left_wrist = pose.landmarks[PoseLandmarkType.leftWrist];
+          final right_hip = pose.landmarks[PoseLandmarkType.rightHip];
+          final left_hip = pose.landmarks[PoseLandmarkType.leftHip];
           final right_shoulder = pose.landmarks[PoseLandmarkType.rightShoulder];
           final right_shoulder = pose.landmarks[PoseLandmarkType.rightShoulder];
           final right_shoulder = pose.landmarks[PoseLandmarkType.rightShoulder];
