@@ -158,9 +158,11 @@ class _MyHomePageState extends State<MyHomePage> {
   List <String> landmarks = [ "Shoulder", "Elbow", "Wrist", "Hip", "Knee", "Ankle" ];
   Widget tab (String label) {
     return Container(
-      padding: EdgeInsets.all(8),
+      padding: EdgeInsets.all(9),
       width: MediaQuery.of(context).size.width, height: 50,
-      Row(),
+      child: Row(children: [
+        
+      ],),
     );
   }
 
