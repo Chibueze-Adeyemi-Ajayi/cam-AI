@@ -179,6 +179,7 @@ class _MyHomePageState extends State<MyHomePage> {
         List <Offset> landmarks = [];
         String output = "";
         for (Pose pose in poses) {
+
           final right_shoulder = pose.landmarks[PoseLandmarkType.rightShoulder];
           final left_shoulder = pose.landmarks[PoseLandmarkType.leftShoulder];
           final right_elbow = pose.landmarks[PoseLandmarkType.rightElbow];
@@ -191,13 +192,9 @@ class _MyHomePageState extends State<MyHomePage> {
           final left_knee = pose.landmarks[PoseLandmarkType.leftKnee];
           final right_ankle = pose.landmarks[PoseLandmarkType.rightAnkle];
           final left_ankle = pose.landmarks[PoseLandmarkType.leftAnkle];
-          // pose.landmarks.forEach((_, landmark) {
-          //   final type = landmark.type;
-          //   final x = landmark.x;
-          //   final y = landmark.y;
-          //   landmarks.add(Offset(x, y));
-          //   output += type.toString() + "\n" + "X:$x\nY:$y";
-          // });
+          
+
+
         }
         print(output);
     }); 
@@ -337,9 +334,11 @@ class _MyHomePageState extends State<MyHomePage> {
           try {
 
             setState(() { _showDialog = false; _loading = true; _options = false; });
+            var image;
             
+            if (action != 2) {
             XFile file = await camController.takePicture();
-            InputImage image = ImageProcessor.getInputImage(file);
+            image = ImageProcessor.getInputImage(file);}
             
             if (action == 0) { // recognizing text
               String text = await TextRecognition.captureText(image);
