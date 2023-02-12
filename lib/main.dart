@@ -162,7 +162,7 @@ class _MyHomePageState extends State<MyHomePage> {
       height:  MediaQuery.of(context).size.height,
       color: Color.fromARGB(255, 41, 40, 40),
       child: Column(children: [
-        Text("Detecting Pose Landmarks", textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 35)),
+        Text("Detecting Pose Landmarks", textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15)),
         Container(height: 1, margin: EdgeInsets.fromLTRB(0, 10, 0, 10), decoration: BoxDecoration(
           border: Border(bottom: BorderSide(color: Colors.white))
         ),),
