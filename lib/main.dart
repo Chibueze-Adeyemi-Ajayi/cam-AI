@@ -175,7 +175,6 @@ class _MyHomePageState extends State<MyHomePage> {
           });
         }
         print(output);
-        setState(() { title = "POSES"; pose_widget = canvas(landmarks); _showDialog = true; });
     }); 
   }
 
@@ -189,7 +188,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   String _data = "", mode = "Text Recognition"; Widget pose_widget = Container();
   bool _showDialog = false, _loading = false, _options = false, _code = false;
-  int action = 0; String title = "RECOGNIZED TEXT"; 
+  int action = 0; String title = "RECOGNIZED TEXT";  
   
   // painitng palava
   Widget canvas (List <Offset> array) {
