@@ -157,12 +157,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget poseWidget () {
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.fromLTRB(10, 45, 10, 10),
       width: MediaQuery.of(context).size.width,
       height:  MediaQuery.of(context).size.height,
-      color: Color.fromARGB(125, 41, 40, 40),
+      color: Color.fromARGB(255, 41, 40, 40),
       child: Column(children: [
-        Text("Detecting Pose Landmarks", textAlign: TextAlign.center, style: TextStyle(color: Colors.white)),
+        Text("Detecting Pose Landmarks", textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 35)),
         Container(height: 1, margin: EdgeInsets.fromLTRB(0, 10, 0, 10),),
       ],),
     );
@@ -261,6 +261,8 @@ class _MyHomePageState extends State<MyHomePage> {
           ));
   }
 
+  bool pose_detection = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -322,6 +324,7 @@ class _MyHomePageState extends State<MyHomePage> {
           _loading ? Center(child: CircularProgressIndicator(),) : Container(),
           _options ? _options_() : Container(),
           _code ? _barCodeRegion() : Container(),
+          pose_detection ? poseWidget() : Container()
           //canvas()
         ],),
         //color: Colors.transparent,
