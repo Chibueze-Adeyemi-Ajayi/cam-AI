@@ -199,7 +199,6 @@ class _MyHomePageState extends State<MyHomePage> {
       if (x == 9) { X = l_knee_x; Y = l_knee_y;} else 
       if (x == 10) { X = r_ankle_x; Y = r_ankle_y;} else 
       if (x == 11) { X = l_ankle_x; Y = l_ankle_y;}
-
       children.add(tab(landmark, [X, Y]));
     });
     return Container(
@@ -397,6 +396,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () {
           setState(() {
             pose_detection = false;
+            camController.stopImageStream();
           });
       }) : FloatingActionButton(
         backgroundColor: Color.fromARGB(255, 150, 6, 6),
