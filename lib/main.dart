@@ -191,12 +191,16 @@ class _MyHomePageState extends State<MyHomePage> {
         Container(height: 1, margin: EdgeInsets.fromLTRB(0, 10, 0, 10), decoration: BoxDecoration(
           border: Border(bottom: BorderSide(color: Colors.white))
         ),),
-        SingleChildScrollView(
+        Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            child: SingleChildScrollView(
           child: Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             child: Column(children: children,)),
-        )
+          ),
+        ),
       ],),
     );
   }
