@@ -155,17 +155,21 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  List <String> landmarks = [ "Shoulder", "Elbow", "Wrist", "Hip", "Knee", "Ankle" ];
+  List <String> landmarks = [ 
+    "Right Shoulder", "Left Shoulder", "Right Elbow", "Left Elbow", 
+    "Right Wrist", "Left Wrist", "Right Hip", "Left Hip" 
+    "Right Knee", "Left Knee", "Right Ankle", "Left Ankle"
+  ];
   Widget tab (String label) {
     return Container(
       decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.white))),
       padding: EdgeInsets.all(9),
-      width: MediaQuery.of(context).size.width, height: 70,
+      width: MediaQuery.of(context).size.width, height: 58,
       child: Row(children: [
         Text(label, style: TextStyle(color: Colors.white),), Container(width: 25,),
         Column(children: [
           Text("X: ",style: TextStyle(color: Colors.white)),
-          Container(height: 10, decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.white))),),
+          Container(height: 10, decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.white, width: 1))),),
           Text("Y: ",style: TextStyle(color: Colors.white)),
         ],)
       ],),
@@ -188,7 +192,10 @@ class _MyHomePageState extends State<MyHomePage> {
           border: Border(bottom: BorderSide(color: Colors.white))
         ),),
         SingleChildScrollView(
-          child: Container(child: Column(children: children,)),
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            child: Column(children: children,)),
         )
       ],),
     );
