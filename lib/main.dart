@@ -187,10 +187,10 @@ class _MyHomePageState extends State<MyHomePage> {
           final left_wrist = pose.landmarks[PoseLandmarkType.leftWrist];
           final right_hip = pose.landmarks[PoseLandmarkType.rightHip];
           final left_hip = pose.landmarks[PoseLandmarkType.leftHip];
-          final right_shoulder = pose.landmarks[PoseLandmarkType.rightShoulder];
-          final right_shoulder = pose.landmarks[PoseLandmarkType.rightShoulder];
-          final right_shoulder = pose.landmarks[PoseLandmarkType.rightShoulder];
-          final right_shoulder = pose.landmarks[PoseLandmarkType.rightShoulder];
+          final right_knee = pose.landmarks[PoseLandmarkType.rightKnee];
+          final left_knee = pose.landmarks[PoseLandmarkType.leftKnee];
+          final right_ankle = pose.landmarks[PoseLandmarkType.rightAnkle];
+          final left_ankle = pose.landmarks[PoseLandmarkType.leftAnkle];
           // pose.landmarks.forEach((_, landmark) {
           //   final type = landmark.type;
           //   final x = landmark.x;
