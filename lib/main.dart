@@ -319,7 +319,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ));
   }
 
-  bool pose_detection = true;
+  bool pose_detection = false;
 
   @override
   Widget build(BuildContext context) {
