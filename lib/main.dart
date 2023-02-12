@@ -167,7 +167,7 @@ class _MyHomePageState extends State<MyHomePage> {
   double r_knee_x = 0, r_knee_y = 0, l_knee_x = 0, l_knee_y = 0;
   double r_ankle_x = 0, r_ankle_y = 0, l_ankle_x = 0, l_ankle_y = 0;
   
-  Widget tab (String label, List <int> coordinates) {
+  Widget tab (String label, List <double> coordinates) {
     return Container(
       decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.white))),
       padding: EdgeInsets.all(9),
@@ -186,7 +186,21 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget poseWidget () {
     var x  = -1; List <Widget> children = [];
     landmarks.forEach((landmark){ x ++;
-      children.add(tab(landmark));
+      double X = 0.0, Y = 0.0;
+      if (x == 0) { X = r_shoulder_x; Y = r_shoulder_y;} else 
+      if (x == 1) { X = l_shoulder_x; Y = l_shoulder_y;} else 
+      if (x == 2) { X = r_elbow_x; Y = r_elbow_y;} else 
+      if (x == 3) { X = l_elbow_x; Y = l_elbow_y;} else 
+      if (x == 4) { X = r_wrist_x; Y = r_wrist_y;} else 
+      if (x == 5) { X = l_wrist_x; Y = l_wrist_y;} else 
+      if (x == 6) { X = r_hip_x; Y = r_hip_y;} else 
+      if (x == 7) { X = l_hip_x; Y = l_hip_y;} else 
+      if (x == 8) { X = r_knee_x; Y = r_knee_y;} else 
+      if (x == 9) { X = l_knee_x; Y = l_knee_y;} else 
+      if (x == 10) { X = r_ankle_x; Y = r_ankle_y;} else 
+      if (x == 11) { X = l_ankle_x; Y = l_ankle_y;}
+
+      children.add(tab(landmark, [X, Y]));
     });
     return Container(
       padding: EdgeInsets.fromLTRB(10, 45, 10, 10),
