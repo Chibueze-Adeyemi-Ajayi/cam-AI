@@ -20,10 +20,13 @@ final List<Offset> offsets;
     // linking the shoulders together
     canvas.drawLine(offsets[0], offsets[1], paint2);
     // linking left shoulder with left elbow
-    canvas.drawLine(offsets[1], offsets[2], paint2);
+    canvas.drawLine(offsets[1], offsets[3], paint2);
     // linking left elbow with left l=wrist
-    canvas.drawLine(offsets[1], offsets[6], paint2);
-    
+    canvas.drawLine(offsets[3], offsets[5], paint2);
+    // linking right shoulder with right elbow
+    canvas.drawLine(offsets[0], offsets[2], paint2);
+    // linking right shoulder with right wrist
+    canvas.drawLine(offsets[2], offsets[4], paint2);
   }
 
   @override
