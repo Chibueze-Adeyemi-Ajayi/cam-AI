@@ -231,6 +231,12 @@ class _MyHomePageState extends State<MyHomePage> {
             Offset(l_elbow_x, l_elbow_y),
             Offset(r_wrist_x, r_wrist_y),
             Offset(l_wrist_x, l_wrist_y),
+            Offset(r_hip_x, r_hip_y),
+            Offset(l_hip_x, l_hip_y),
+            Offset(r_knee_x, r_knee_y),
+            Offset(l_knee_x, l_knee_y),
+            Offset(r_ankle_x, r_ankle_y),
+            Offset(l_ankle_x, l_ankle_y),
           ]),
         ],)
       ],),
