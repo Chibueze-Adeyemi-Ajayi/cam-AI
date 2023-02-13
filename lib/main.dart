@@ -12,7 +12,6 @@ import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mlkit_pose_detection/google_mlkit_pose_detection.dart';
-import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
 
 late CameraController camController;
 late Future<void> cameraValue;
@@ -62,7 +61,10 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void initCam () async {
-    camController = CameraController(cameras[0], ResolutionPreset.low);
+    camController = CameraController(
+      cameras[0], ResolutionPreset.low
+    );
+    camController.setFocusMode(FocusMode.auto);
     cameraValue = camController.initialize().then((_) => {
         if (!mounted) {
           showDialog(context: context, builder: (context) {
@@ -438,8 +440,9 @@ class _MyHomePageState extends State<MyHomePage> {
             var image;
             
             if (action != 2) {
-            XFile file = await camController.takePicture();
-            image = ImageProcessor.getInputImage(file);}
+              XFile file = await camController.takePicture();
+              image = ImageProcessor.getInputImage(file);
+            }
             
             if (action == 0) { // recognizing text
               String text = await TextRecognition.captureText(image);
