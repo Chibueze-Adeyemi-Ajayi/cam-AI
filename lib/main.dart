@@ -424,6 +424,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () {
           setState(() {
             pose_detection = false;
+            PoseDetection.close();
             camController.stopImageStream();
           });
       }) : FloatingActionButton(

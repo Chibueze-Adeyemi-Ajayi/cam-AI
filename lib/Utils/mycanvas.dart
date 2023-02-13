@@ -14,13 +14,15 @@ final List<Offset> offsets;
      var paint2 = Paint()
       ..color = Color.fromARGB(255, 255, 39, 1)
       ..strokeWidth = 1;
-    //list of points
-    var length = offsets.length / 2;
-    // for (var i = 0; i < length; i++) {
+   
       canvas.drawPoints(PointMode.points, offsets, paint1);
-    // }
+   
     // linking the shoulders together
     canvas.drawLine(offsets[0], offsets[1], paint2);
+    // linking left shoulder with left elbow
+    canvas.drawLine(offsets[1], offsets[2], paint2);
+    // linking left elbow with left l=wrist
+    canvas.drawLine(offsets[1], offsets[6], paint2);
     
   }
 
