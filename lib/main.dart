@@ -205,7 +205,7 @@ class _MyHomePageState extends State<MyHomePage> {
       padding: EdgeInsets.fromLTRB(10, 45, 10, 10),
       width: MediaQuery.of(context).size.width,
       height:  MediaQuery.of(context).size.height,
-      color: Color.fromARGB(255, 41, 40, 40),
+      color: Color.fromARGB(100, 41, 40, 40),
       child: PageView(children: [
         Column(children: [
           Text("Detecting Pose Landmarks", textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15)),
@@ -223,7 +223,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],),
         Column(children: [
-          Text("Graphical User Interface", textAlign: TextAlign.center , style: TextStyle(color: Colors.white),),
+          Text("Pose Graph", textAlign: TextAlign.center , style: TextStyle(color: Colors.white),),
           canvas([
             Offset(r_shoulder_x, r_shoulder_y),
             Offset(l_shoulder_x, l_shoulder_y),
