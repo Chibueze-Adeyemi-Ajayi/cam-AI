@@ -250,7 +250,16 @@ class _MyHomePageState extends State<MyHomePage> {
           final left_ankle = pose.landmarks[PoseLandmarkType.leftAnkle];
           
           setState(() {
-            
+            r_shoulder_x = right_shoulder!.x; r_shoulder_y = right_shoulder.y;
+            l_shoulder_x = left_shoulder!.x; l_shoulder_y = left_shoulder.y;
+            r_elbow_x = right_elbow!.x; r_elbow_y = right_elbow.y;
+            l_elbow_x = left_elbow!.x; l_elbow_y = left_elbow.y;
+            r_wrist_x = right_wrist!.x; r_wrist_y = right_wrist.y;
+            l_wrist_x = left_wrist!.x; l_wrist_y = left_wrist.y;
+            r_hip_x = right_hip!.x; r_hip_y = right_hip.y;
+            l_hip_x = left_hip!.x; l_hip_y = left_hip.y;
+            r_knee_x = right_knee!.x; r_knee_y = right_knee.y;
+            l_knee_x = left_knee!.x; l_knee_y = left_knee.y;
           });
 
         }
