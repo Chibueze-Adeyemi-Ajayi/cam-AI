@@ -223,7 +223,15 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],),
         Column(children: [
-          Text("Graphical User Interface", textAlign: TextAlign.center , style: TextStyle(color: Colors.white),)
+          Text("Graphical User Interface", textAlign: TextAlign.center , style: TextStyle(color: Colors.white),),
+          canvas([
+            Offset(r_shoulder_x, r_shoulder_y),
+            Offset(l_shoulder_x, l_shoulder_y),
+            Offset(r_elbow_x, r_elbow_y),
+            Offset(l_elbow_x, l_elbow_y),
+            Offset(r_wrist_x, r_wrist_y),
+            Offset(l_wrist_x, l_wrist_y),
+          ]),
         ],)
       ],),
     );
