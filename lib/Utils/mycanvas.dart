@@ -37,6 +37,10 @@ final List<Offset> offsets;
     canvas.drawLine(offsets[7], offsets[9], paint2);
     // linking right hip with right knee
     canvas.drawLine(offsets[6], offsets[8], paint2);
+    // linking right knee with right ankle
+    canvas.drawLine(offsets[8], offsets[10], paint2);
+    // linking left knee with left ankle
+    canvas.drawLine(offsets[9], offsets[11], paint2);
   }
 
   @override
