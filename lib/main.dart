@@ -279,6 +279,8 @@ class _MyHomePageState extends State<MyHomePage> {
             l_hip_x = left_hip!.x; l_hip_y = left_hip.y;
             r_knee_x = right_knee!.x; r_knee_y = right_knee.y;
             l_knee_x = left_knee!.x; l_knee_y = left_knee.y;
+            r_ankle_x = right_ankle!.x; r_ankle_y = right_ankle.y;
+            l_ankle_x = left_ankle!.x; l_ankle_y = left_ankle.y;
           });
 
         }
