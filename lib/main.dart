@@ -59,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
     super.dispose();
     camController.dispose();
   }
-// th
+// thi
   void initCam () async {
     camController = CameraController(
       cameras[0], ResolutionPreset.low
