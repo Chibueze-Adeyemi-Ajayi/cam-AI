@@ -61,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 // this function initializes the camera on the mobile devices
   void initCam () async {
-    // initiali
+    // initializ
     camController = CameraController(
       cameras[0], ResolutionPreset.low
     );
