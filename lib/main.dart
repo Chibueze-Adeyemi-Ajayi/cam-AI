@@ -59,12 +59,12 @@ class _MyHomePageState extends State<MyHomePage> {
     super.dispose();
     camController.dispose();
   }
-
+// 
   void initCam () async {
     camController = CameraController(
       cameras[0], ResolutionPreset.low
     );
-    camController.setFocusMode(FocusMode.auto);
+    camController.setFocusPoint(Offset(0, 0));
     cameraValue = camController.initialize().then((_) => {
         if (!mounted) {
           showDialog(context: context, builder: (context) {
