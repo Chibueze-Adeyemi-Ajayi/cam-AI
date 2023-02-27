@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void captureVideo () {
     camController.startVideoRecording();
   }
-// This disposes the camera controller on closi
+// This disposes the camera controller on closin
   @override
   void dispose() {
     // TODO: implement dispose 
