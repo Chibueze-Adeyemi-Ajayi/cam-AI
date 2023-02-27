@@ -61,8 +61,9 @@ class _MyHomePageState extends State<MyHomePage> {
     super.dispose();
     camController.dispose();
   }
-  
+
 // this function initializes the camera on the mobile devices
+
   void initCam () async {
     // initializing the camera controller
     camController = CameraController(
