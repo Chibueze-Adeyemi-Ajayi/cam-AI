@@ -2,7 +2,7 @@
 
 import 'package:google_mlkit_pose_detection/google_mlkit_pose_detection.dart';
 
-// Pose 
+// Pose d
 
 class PoseDetection {
   static final options = PoseDetectorOptions();
