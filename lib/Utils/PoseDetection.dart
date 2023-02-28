@@ -5,7 +5,7 @@ import 'package:google_mlkit_pose_detection/google_mlkit_pose_detection.dart';
 // Pose detection class 
 
 class PoseDetection {
-  // connecting to google's al
+  // connecting to google's alg
   static final options = PoseDetectorOptions();
   static final poseDetector = PoseDetector(options: options);
   static Future <List<Pose>> getPose(inputImage) async {
