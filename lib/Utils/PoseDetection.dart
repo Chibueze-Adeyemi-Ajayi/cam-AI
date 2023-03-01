@@ -12,7 +12,7 @@ class PoseDetection {
     final List <Pose> poses = await poseDetector.processImage(inputImage);
     return poses;
   }
-  // closing connection to pose goog detection algorithm
+  // closing connection to pose googl detection algorithm
   static close () {
     poseDetector.close();
   }
