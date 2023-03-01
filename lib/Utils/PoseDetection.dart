@@ -12,7 +12,7 @@ class PoseDetection {
     final List <Pose> poses = await poseDetector.processImage(inputImage);
     return poses;
   }
-  // closing connection to pose detecti
+  // closing connection to pose detectio
   static close () {
     poseDetector.close();
   }
