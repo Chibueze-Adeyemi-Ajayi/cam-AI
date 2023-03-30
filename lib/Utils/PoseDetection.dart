@@ -9,7 +9,7 @@ class PoseDetection {
   static final options = PoseDetectorOptions();
   static final poseDetector = PoseDetector(options: options);
   static Future <List<Pose>> getPose(inputImage) async {
-    // lis
+    // liss
     final List <Pose> poses = await poseDetector.processImage(inputImage);
     return poses;
   }
