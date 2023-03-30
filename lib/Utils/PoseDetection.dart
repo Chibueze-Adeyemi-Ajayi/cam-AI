@@ -3,7 +3,7 @@
 import 'package:google_mlkit_pose_detection/google_mlkit_pose_detection.dart';
 
 // Pose detection class 
-// Google fir ML kit algorithm 
+// Google fire ML kit algorithm 
 class PoseDetection {
   // connecting to google's algorithm
   static final options = PoseDetectorOptions();
