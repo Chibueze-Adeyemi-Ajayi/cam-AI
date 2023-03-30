@@ -1,6 +1,6 @@
 import 'package:learning_digital_ink_recognition/learning_digital_ink_recognition.dart';
 
-// digital ink recognition algorithm from google ML k
+// digital ink recognition algorithm from google ML ki
 class InkRecognition {
 
   // language code
