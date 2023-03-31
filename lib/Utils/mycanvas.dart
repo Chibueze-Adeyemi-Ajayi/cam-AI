@@ -42,7 +42,7 @@ final List<Offset> offsets;
     // linking left knee with left ankle
     canvas.drawLine(offsets[9], offsets[11], paint2);
   }
-  // overriden
+  // override
   @override
   bool shouldRepaint(CustomPainter oldDelegate) => true;
 }
