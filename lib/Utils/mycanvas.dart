@@ -14,7 +14,7 @@ final List<Offset> offsets;
      var paint2 = Paint()
       ..color = Color.fromARGB(255, 255, 39, 1)
       ..strokeWidth = 1;
-      // drawing points on 
+      // drawing points on c
       canvas.drawPoints(PointMode.points, offsets, paint1);
    
     // linking the shoulders together
