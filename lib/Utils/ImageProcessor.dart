@@ -9,7 +9,7 @@ import 'package:image/image.dart' as image_lib;
 // image processing 
 class ImageProcessor {
   
-    // sta
+    // stat
     static InputImage getInputImage (var file) {
       return InputImage.fromFilePath(file.path);
     }
