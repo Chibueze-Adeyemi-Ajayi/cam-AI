@@ -6,7 +6,7 @@ import 'package:flutter/rendering.dart';
 import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
 import 'package:image/image.dart' as image_lib;
 
-// image pr
+// image pro
 class ImageProcessor {
   
     static InputImage getInputImage (var file) {
