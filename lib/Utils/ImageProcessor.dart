@@ -14,7 +14,7 @@ class ImageProcessor {
       return InputImage.fromFilePath(file.path);
     }
 
-    // cam
+    // came
     static InputImage getInputImageFromLiveStream (CameraImage cameraImage, camera) {
       final WriteBuffer allBytes = WriteBuffer();
       for (Plane plane in cameraImage.planes) {
