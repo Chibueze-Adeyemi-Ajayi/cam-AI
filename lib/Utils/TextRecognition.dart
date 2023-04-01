@@ -1,6 +1,6 @@
 import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
 
-// text rec
+// text reco
 
 class TextRecognition {
 
