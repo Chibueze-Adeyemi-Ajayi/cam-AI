@@ -1,6 +1,6 @@
 import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
 
-// text recognition algorithm from ml k
+// text recognition algorithm from ml ki
 
 class TextRecognition {
 
