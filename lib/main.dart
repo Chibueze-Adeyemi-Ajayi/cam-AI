@@ -1,5 +1,5 @@
 // mobile app for:
-// 1. recognize text
+// 1. recognize tex
 
 import 'package:cam_ai/Utils/BarcodeRecognition.dart';
 import 'package:cam_ai/Utils/ImageProcessor.dart';
