@@ -1,6 +1,6 @@
 // mobile app for:
 // 1. recognize texts
-// 2. scan
+// 2. sca
 
 import 'package:cam_ai/Utils/BarcodeRecognition.dart';
 import 'package:cam_ai/Utils/ImageProcessor.dart';
