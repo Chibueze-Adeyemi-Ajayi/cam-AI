@@ -1,7 +1,6 @@
 // mobile app for:
 // 1. recognize texts
 
-
 import 'package:cam_ai/Utils/BarcodeRecognition.dart';
 import 'package:cam_ai/Utils/ImageProcessor.dart';
 import 'package:cam_ai/Utils/PoseDetection.dart';
