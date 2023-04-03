@@ -1,5 +1,5 @@
 // mobile app for:
-// 1. rec
+// 1. re
 
 import 'package:cam_ai/Utils/BarcodeRecognition.dart';
 import 'package:cam_ai/Utils/ImageProcessor.dart';
