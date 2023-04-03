@@ -1,4 +1,3 @@
-
 import 'package:cam_ai/Utils/BarcodeRecognition.dart';
 import 'package:cam_ai/Utils/ImageProcessor.dart';
 import 'package:cam_ai/Utils/PoseDetection.dart';
