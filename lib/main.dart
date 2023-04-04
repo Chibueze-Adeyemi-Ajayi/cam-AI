@@ -172,7 +172,7 @@ class _MyHomePageState extends State<MyHomePage> {
   double r_knee_x = 0, r_knee_y = 0, l_knee_x = 0, l_knee_y = 0;
   double r_ankle_x = 0, r_ankle_y = 0, l_ankle_x = 0, l_ankle_y = 0;
   
-  // tab widgets
+  // tab widgets 
   Widget tab (String label, List <double> coordinates) {
     return Container(
       decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.white))),
