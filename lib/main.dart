@@ -164,7 +164,7 @@ class _MyHomePageState extends State<MyHomePage> {
     "Right Wrist", "Left Wrist", "Right Hip", "Left Hip", 
     "Right Knee", "Left Knee", "Right Ankle", "Left Ankle"
   ];
-  // parameter varia
+  // parameter variab
   double r_shoulder_x = 0, r_shoulder_y = 0, l_shoulder_x = 0, l_shoulder_y = 0;
   double r_elbow_x = 0, r_elbow_y = 0, l_elbow_x = 0, l_elbow_y = 0;
   double r_wrist_x = 0, r_wrist_y = 0, l_wrist_x = 0, l_wrist_y = 0;
