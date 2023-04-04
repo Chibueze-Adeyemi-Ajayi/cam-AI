@@ -157,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
-  // pose detection parameter
+  // pose detection parameters
   List <String> landmarks = [ 
     "Right Shoulder", "Left Shoulder", "Right Elbow", "Left Elbow", 
     "Right Wrist", "Left Wrist", "Right Hip", "Left Hip", 
