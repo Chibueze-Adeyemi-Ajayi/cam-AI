@@ -8,7 +8,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mlkit_pose_detection/google_mlkit_pose_detection.dart';
 
-late CameraController camController; // camera contr
+late CameraController camController; // camera contro
 late Future<void> cameraValue;
 late List <CameraDescription> cameras;
 
