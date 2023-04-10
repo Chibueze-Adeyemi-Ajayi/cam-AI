@@ -10,7 +10,7 @@ import 'package:google_mlkit_pose_detection/google_mlkit_pose_detection.dart';
 
 late CameraController camController; // camera controller 
 late Future<void> cameraValue; // future loader 
-late List <CameraDescription> cameras; // came
+late List <CameraDescription> cameras; // camer
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
