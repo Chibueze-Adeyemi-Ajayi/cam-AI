@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:google_mlkit_pose_detection/google_mlkit_pose_detection.dart';
 
 late CameraController camController; // camera controller 
-late Future<void> cameraValue; // ft
+late Future<void> cameraValue; // f
 late List <CameraDescription> cameras;
 
 void main() async {
