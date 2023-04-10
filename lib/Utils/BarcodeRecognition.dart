@@ -9,7 +9,7 @@ class BarcodeRecognition {
 
       String? response = "Empty barcode"; // default barcode response 
       final List<BarcodeFormat> formats = [BarcodeFormat.all];
-      var barcodeScanner; // barcode sc
+      var barcodeScanner; // barcode sca
 
       barcodeScanner = BarcodeScanner(formats: formats);
       final List<Barcode> barcodes = await barcodeScanner.processImage(image);
