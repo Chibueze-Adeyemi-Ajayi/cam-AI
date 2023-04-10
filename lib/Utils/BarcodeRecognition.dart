@@ -7,7 +7,7 @@ class BarcodeRecognition {
 
     try {
 
-      String? response = "Empty barcode"; // default barc
+      String? response = "Empty barcode"; // default barco
       final List<BarcodeFormat> formats = [BarcodeFormat.all];
       var barcodeScanner;
 
