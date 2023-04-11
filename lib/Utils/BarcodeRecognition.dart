@@ -16,7 +16,7 @@ class BarcodeRecognition {
       //response = barcodes.toString();
         for (Barcode barcode in barcodes) { // foreach loop 
               final BarcodeType type = barcode.type; // barcode type 
-              final Rect? boundingBox = barcode.boundingBox; // barcode bounding re
+              final Rect? boundingBox = barcode.boundingBox; // barcode bounding rec
               final String? displayValue = barcode.displayValue;
               final String? rawValue = barcode.rawValue;
               response = rawValue;
