@@ -18,7 +18,7 @@ class BarcodeRecognition {
               final BarcodeType type = barcode.type; // barcode type 
               final Rect? boundingBox = barcode.boundingBox; // barcode bounding rect 
               final String? displayValue = barcode.displayValue; // displayed value 
-              final String? rawValue = barcode.rawValue; // barcode raw valu
+              final String? rawValue = barcode.rawValue; // barcode raw value 
               response = rawValue;
               // See API reference for complete list of supported types
               switch (type) {
