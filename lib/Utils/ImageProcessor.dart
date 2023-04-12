@@ -27,7 +27,7 @@ class ImageProcessor {
       InputImageRotation imageRotation = InputImageRotation.rotation0deg;
       switch (camera.sensorOrientation) {
         case 0:
-          imageRotation = InputImageRotation.rotation0deg; // 0 d
+          imageRotation = InputImageRotation.rotation0deg; // 0 de
           break;
         case 90:
           imageRotation = InputImageRotation.rotation90deg;
