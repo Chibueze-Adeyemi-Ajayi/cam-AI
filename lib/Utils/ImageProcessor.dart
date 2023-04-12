@@ -11,7 +11,7 @@ class ImageProcessor {
   
     // static image
     static InputImage getInputImage (var file) {
-      return InputImage.fromFilePath(file.path); // image fi
+      return InputImage.fromFilePath(file.path); // image fil
     }
 
     // camera
