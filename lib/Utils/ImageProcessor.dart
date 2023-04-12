@@ -30,7 +30,7 @@ class ImageProcessor {
           imageRotation = InputImageRotation.rotation0deg; // 0 degree
           break;
         case 90:
-          imageRotation = InputImageRotation.rotation90deg; 
+          imageRotation = InputImageRotation.rotation90deg; 9
           break;
         case 180:
           imageRotation = InputImageRotation.rotation180deg;
