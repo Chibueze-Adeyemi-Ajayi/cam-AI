@@ -44,7 +44,7 @@ class ImageProcessor {
         size: imageSize, // image size
         planeData: null,
         imageRotation: imageRotation, // rotation
-        inputImageFormat: InputImageFormat.bgra8888 // r
+        inputImageFormat: InputImageFormat.bgra8888 // rg
       ); // image data 
 
       final inputImage = InputImage.fromBytes(bytes: bytes, inputImageData: inputImageData);
