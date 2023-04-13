@@ -40,7 +40,7 @@ class ImageProcessor {
           break;
       }
 
-      final inputImageData = InputImageData( // ima
+      final inputImageData = InputImageData( // imag
         size: imageSize,
         planeData: null,
         imageRotation: imageRotation,
