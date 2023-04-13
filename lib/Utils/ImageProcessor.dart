@@ -41,7 +41,7 @@ class ImageProcessor {
       }
 
       final inputImageData = InputImageData( // image data
-        size: imageSize, // image 
+        size: imageSize, // image s
         planeData: null,
         imageRotation: imageRotation,
         inputImageFormat: InputImageFormat.bgra8888
